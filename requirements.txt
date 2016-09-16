@@ -1,1 +1,2 @@
 sphinxcontrib-emacs
+rst2pdf
