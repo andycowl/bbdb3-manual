@@ -95,18 +95,3 @@ Variables
 
 .. el:variable:: bbdb-snarf-url-regexp
    :auto:
-
-.. el:variable:: bbdb-snarf-rule-alist
-   :auto:
-
-.. el:variable:: bbdb-snarf-rule-alist
-   :auto:
-
-.. el:variable:: bbdb-snarf-rule-alist
-   :auto:
-
-.. el:variable:: bbdb-snarf-rule-alist
-   :auto:
-
-.. el:variable:: bbdb-snarf-rule-alist
-   :auto:
