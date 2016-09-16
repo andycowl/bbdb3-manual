@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Gnus &#8212; BBDBV3 3.1.2 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="BBDBV3 3.1.2 documentation" href="index.html" />
+    <link rel="next" title="Mail" href="mail.html" />
+    <link rel="prev" title="Tutorial" href="tutorial.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gnus">
+<h1>Gnus<a class="headerlink" href="#gnus" title="Permalink to this headline">¶</a></h1>
+<p>Although using BBDB interactively illustrates key features, the real
+power of BBDB is when used in conjunction with a mail or news reader.</p>
+<p>BBDB calls any such mail/news reader a Mail User Agent (MUA) and
+offers similar functionality for all supported MUA&#8217;s.</p>
+<p>This MUA abstraction makes it relatively easy to add support for new
+mail readers.</p>
+<p>BBDB also supports &#8216;message-mode&#8217; which is commonly used by mail
+programs to send outbound email messages. Again, as BBDB integrates
+with &#8216;message-node&#8217;, it automatically works with any Emacs mail
+program that supports &#8216;message-mode&#8217;.</p>
+<p>The real power is the ability to automatically add entries to BBDB
+when reading email or news.</p>
+<div class="section" id="what-version-of-gnus-do-i-need">
+<h2>What version of Gnus do I need ?<a class="headerlink" href="#what-version-of-gnus-do-i-need" title="Permalink to this headline">¶</a></h2>
+<p>BBDB works with any version of Gnus bundled with Emacs 23 (and later).</p>
+</div>
+<div class="section" id="automatically-add-entries">
+<h2>Automatically add entries<a class="headerlink" href="#automatically-add-entries" title="Permalink to this headline">¶</a></h2>
+<p>To ensure Gnus and message mode both use BBDB, add these lines to
+&#8216;init.el&#8217;:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">bbdb</span><span class="o">-</span><span class="n">initialize</span> <span class="s1">&#39;gnus &#39;</span><span class="n">message</span><span class="p">)</span>
+<span class="p">(</span><span class="n">bbdb</span><span class="o">-</span><span class="n">mua</span><span class="o">-</span><span class="n">auto</span><span class="o">-</span><span class="n">update</span><span class="o">-</span><span class="n">init</span> <span class="s1">&#39;gnus &#39;</span><span class="n">message</span><span class="p">)</span>
+<span class="p">;</span>
+<span class="p">;</span> <span class="n">Display</span> <span class="n">BBDB</span> <span class="ow">in</span> <span class="n">popup</span> <span class="n">window</span>
+<span class="p">(</span><span class="n">setq</span> <span class="n">bbdb</span><span class="o">-</span><span class="n">mua</span><span class="o">-</span><span class="n">pop</span><span class="o">-</span><span class="n">up</span> <span class="n">t</span><span class="p">)</span>
+<span class="p">;</span>
+<span class="p">;</span> <span class="n">Look</span> <span class="k">for</span> <span class="n">existing</span> <span class="n">contact</span><span class="p">,</span> <span class="n">interactively</span> <span class="n">prompt</span> <span class="n">to</span> <span class="n">create</span>
+<span class="p">(</span><span class="n">setq</span> <span class="n">bbdb</span><span class="o">-</span><span class="n">mua</span><span class="o">-</span><span class="n">update</span><span class="o">-</span><span class="n">interactive</span><span class="o">-</span><span class="n">p</span> <span class="s1">&#39;(query . create))</span>
+</pre></div>
+</div>
+<p>This configuration integrates Gnus into BBDB. No contacts will be
+added to BBDB unless the user explicitly requests this action.</p>
+<p>For an <em>interesting</em> contact, simply type &#8216;;&#8217; in the Gnus summary buffer
+which invokes &#8216;bbdb-mua-edit-field-sender&#8217;.</p>
+<p>BBDB offers the following options:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Michael Stipe is not in BBDB; add (y ! n s q ?)
+Type ? for this help
+Type &#39;y to add the current record
+Type ! to add all the remaining records
+Type n to skip the current record (You may also use space)
+Type s to switch from annotate to search mode
+Type q to quit updating records. No more search or annotation is done.
+</pre></div>
+</div>
+<p>Type &#8216;y&#8217; to add the contact and annotate as required. For example, a
+personal contact might be tagged with &#8216;Family&#8217; in the &#8216;Notes&#8217; field.</p>
+<p>When composing or replying to a message, you can use &#8216;TAB&#8217;
+(&#8216;message-tab&#8217;) to complete names from BBDB.</p>
+<p>To enable fully automatic and insidious mode, use:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">;</span> <span class="n">Silently</span> <span class="n">add</span> <span class="n">record</span> <span class="n">to</span> <span class="n">BBDB</span> <span class="p">(</span><span class="k">if</span> <span class="ow">not</span> <span class="n">already</span> <span class="n">present</span><span class="p">)</span>
+<span class="p">(</span><span class="n">setq</span> <span class="n">bbdb</span><span class="o">-</span><span class="n">update</span><span class="o">-</span><span class="n">records</span><span class="o">-</span><span class="n">p</span> <span class="s1">&#39;create)</span>
+<span class="p">;</span> <span class="n">Update</span> <span class="n">BBDB</span> <span class="n">silently</span>
+<span class="p">(</span><span class="n">setq</span> <span class="n">bbdb</span><span class="o">-</span><span class="n">mua</span><span class="o">-</span><span class="n">pop</span><span class="o">-</span><span class="n">up</span> <span class="n">nil</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="whitelists-and-blacklists">
+<h2>Whitelists and blacklists<a class="headerlink" href="#whitelists-and-blacklists" title="Permalink to this headline">¶</a></h2>
+<p>[ Check this and test ]</p>
+<p>There are some scenarios where it is not useful for BBDB to mindlessly
+collect contact information. One example is the Gmane mailing lists
+where the true email addresses of posters are masked:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>(setq bbdb/mail-auto-create-p &#39;bbdb-ignore-some-messages-hook)
+(setq bbdb/news-auto-create-p &#39;bbdb-ignore-some-messages-hook)
+(setq bbdb-ignore-some-messages-alist
+  `((&quot;From&quot; . &quot;public.gmane.org&quot;)
+   (&quot;Newsgroups&quot; . &quot;gmane.*&quot;)
+   ))
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-full-name">
+<h2>Use full name<a class="headerlink" href="#use-full-name" title="Permalink to this headline">¶</a></h2>
+<p>[ Check this example too ]</p>
+<p>Some people (or their IT administrators) have malformed names in their
+email configuration. If you prefer to see names correctly capitalized
+as &#8216;Mike Mills&#8217; rather than &#8216;mike mills&#8217; or, worse, &#8216;MIKE MILLS&#8217;, you
+can ask Gnus to display the name stored in BBDB in preference to the name
+supplied in the mail or article header information:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">;</span> <span class="n">display</span> <span class="n">names</span> <span class="k">as</span> <span class="ow">in</span> <span class="n">BBDB</span> <span class="n">database</span>
+<span class="p">(</span><span class="n">autoload</span> <span class="s1">&#39;bbdb/gnus-lines-and-from &quot;bbdb-gnus&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="gnus-summary-line">
+<h2>Gnus Summary Line<a class="headerlink" href="#gnus-summary-line" title="Permalink to this headline">¶</a></h2>
+<p>To get Gnus to display the BBDB name together with a indication (the
+&#8216;+&#8217; character) that the sender is known to BBDB, use:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>; Default with %f (&#39;Name, To header or Newsgroups header&#39;)
+; replaced by %uB (BBDB Name + Known poster indicator &#39;+&#39;)
+;
+; Original Gnus setting
+;
+; ‘%U%R%z%I%(%[%4L: %-23,23f%]%) %s\n’.
+(setq gnus-summary-line-format &quot;%U%R%z%I%(%[%4L: %-23,23uB%]%) %s\n&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Gnus</a><ul>
+<li><a class="reference internal" href="#what-version-of-gnus-do-i-need">What version of Gnus do I need ?</a></li>
+<li><a class="reference internal" href="#automatically-add-entries">Automatically add entries</a></li>
+<li><a class="reference internal" href="#whitelists-and-blacklists">Whitelists and blacklists</a></li>
+<li><a class="reference internal" href="#use-full-name">Use full name</a></li>
+<li><a class="reference internal" href="#gnus-summary-line">Gnus Summary Line</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="tutorial.html" title="previous chapter">Tutorial</a></li>
+      <li>Next: <a href="mail.html" title="next chapter">Mail</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/gnus.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Andy Cowling.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/gnus.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

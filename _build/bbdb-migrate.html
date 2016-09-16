@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Lisp library (bbdb-migrate) &#8212; BBDBV3 3.1.2 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="BBDBV3 3.1.2 documentation" href="index.html" />
+    <link rel="next" title="Lisp library (bbdb-mu4e)" href="bbdb-mu4e.html" />
+    <link rel="prev" title="Lisp library (bbdb-mhe)" href="bbdb-mhe.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="lisp-library-bbdb-migrate">
+<h1>Lisp library (bbdb-migrate)<a class="headerlink" href="#lisp-library-bbdb-migrate" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<dl class="constant">
+<dt id="el.variable.bbdb-migration-spec">
+<em class="property">Constant </em><code class="descname">bbdb-migration-spec</code><a class="headerlink" href="#el.variable.bbdb-migration-spec" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">The alist of (version . migration-spec-list).
+See <a class="reference internal" href="#el.function.bbdb-migrate-record-lambda" title="bbdb-migrate-record-lambda"><code class="docutils literal"><span class="pre">`bbdb-migrate-record-lambda'</span></code></a> for details.</pre>
+</dd></dl>
+
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="el.function.bbdb-migrate">
+<em class="property">Function </em><code class="descname">bbdb-migrate</code> records old-format<a class="headerlink" href="#el.function.bbdb-migrate" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Migrate the BBDB from the version on disk to the current version
+\(in <code class="docutils literal"><span class="pre">`bbdb-file-format'</span></code>).</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-migrate-record-lambda">
+<em class="property">Function </em><code class="descname">bbdb-migrate-record-lambda</code> changes<a class="headerlink" href="#el.function.bbdb-migrate-record-lambda" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Return a function which will migrate a single record.
+CHANGES is a <code class="docutils literal"><span class="pre">`migration-spec-list'</span></code> containing entries of the form
+
+        (GET SET FUNCTION)
+
+where GET is the function to be used to retrieve the field to be
+modified, and SET is the function to be used to set the field to be
+modified.  FUNCTION will be applied to the result of GET, and its
+results will be saved with SET.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-migrate-versions-lambda">
+<em class="property">Function </em><code class="descname">bbdb-migrate-versions-lambda</code> v0<a class="headerlink" href="#el.function.bbdb-migrate-versions-lambda" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Return the function to migrate from V0 to <code class="docutils literal"><span class="pre">`bbdb-file-format'</span></code>.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property">Function </em><code class="descname">bbdb-migrate-versions-lambda</code> v0</dt>
+<dd><pre class="el-docstring-block">Return the function to migrate from V0 to <code class="docutils literal"><span class="pre">`bbdb-file-format'</span></code>.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-migrate-postcodes-to-strings">
+<em class="property">Function </em><code class="descname">bbdb-migrate-postcodes-to-strings</code> addresses<a class="headerlink" href="#el.function.bbdb-migrate-postcodes-to-strings" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Make all postcodes plain strings.
+This uses the code that used to be in <code class="docutils literal"><span class="pre">`bbdb-address-postcode'</span></code>.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-migrate-change-dates">
+<em class="property">Function </em><code class="descname">bbdb-migrate-change-dates</code> record<a class="headerlink" href="#el.function.bbdb-migrate-change-dates" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Change date formats.
+Formats are changed in timestamp and creation-date fields from
+&quot;dd mmm yy&quot; to &quot;yyyy-mm-dd&quot;.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-migrate-change-dates-change-field">
+<em class="property">Function </em><code class="descname">bbdb-migrate-change-dates-change-field</code> field<a class="headerlink" href="#el.function.bbdb-migrate-change-dates-change-field" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Migrate the date field (the cdr of FIELD) from &quot;dd mmm yy&quot; to
+&quot;yyyy-mm-dd&quot;.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-migrate-add-country-field">
+<em class="property">Function </em><code class="descname">bbdb-migrate-add-country-field</code> addrl<a class="headerlink" href="#el.function.bbdb-migrate-add-country-field" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Add a country field to each address in the address list.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-migrate-streets-to-list">
+<em class="property">Function </em><code class="descname">bbdb-migrate-streets-to-list</code> addrl<a class="headerlink" href="#el.function.bbdb-migrate-streets-to-list" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Convert the streets to a list.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-migrate-xfields-to-list">
+<em class="property">Function </em><code class="descname">bbdb-migrate-xfields-to-list</code> xfields<a class="headerlink" href="#el.function.bbdb-migrate-xfields-to-list" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Migrate XFIELDS to list.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-migrate-organization-to-list">
+<em class="property">Function </em><code class="descname">bbdb-migrate-organization-to-list</code> organization<a class="headerlink" href="#el.function.bbdb-migrate-organization-to-list" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Migrate ORGANIZATION to list.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-undocumented-variables">
+<em class="property">Function </em><code class="descname">bbdb-undocumented-variables</code> <em class="property"> &amp;optional </em>name-space message<a class="headerlink" href="#el.function.bbdb-undocumented-variables" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Return list of undocumented variables in NAME-SPACE.
+NAME-SPACE defaults to &quot;bbdb-&quot;.  Use a prefix arg to specify NAME-SPACE
+interactively.  If MESSAGE is non-nil (as in interactive calls) display
+the list in the message area.
+
+This command may come handy to identify BBDB variables in your init file
+that are not used anymore by the current version of BBDB.  Yet this fails
+for outdated BBDB variables that are set via your personal <code class="docutils literal"><span class="pre">`custom-file'</span></code>.</pre>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Lisp library (bbdb-migrate)</a><ul>
+<li><a class="reference internal" href="#constants">Constants</a></li>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="bbdb-mhe.html" title="previous chapter">Lisp library (bbdb-mhe)</a></li>
+      <li>Next: <a href="bbdb-mu4e.html" title="next chapter">Lisp library (bbdb-mu4e)</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/bbdb-migrate.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Andy Cowling.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/bbdb-migrate.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

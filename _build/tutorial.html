@@ -1,0 +1,457 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Tutorial &#8212; BBDBV3 3.1.2 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="BBDBV3 3.1.2 documentation" href="index.html" />
+    <link rel="next" title="Gnus" href="gnus.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="tutorial">
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
+<p>This is a gentle, step-by-step tutorial, aimed at newcomers to BBDB,
+which includes worked examples showing how to use the software.</p>
+<p>The best way to demonstrate the features in BBDB is to actually
+illustrate some standard tasks. If you are already an experienced BBDB
+user, you may wish to skip this section.</p>
+<div class="section" id="creating-an-entry">
+<h2>Creating an entry<a class="headerlink" href="#creating-an-entry" title="Permalink to this headline">¶</a></h2>
+<p>The first task to to add a contact to our BBDB:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">M</span><span class="o">-</span><span class="n">x</span> <span class="n">bbdb</span><span class="o">-</span><span class="n">create</span>
+</pre></div>
+</div>
+<p>Enter &#8216;Ivan McCormick&#8217; as the name.</p>
+<p>Leave the fields &#8216;Organizations&#8217;, &#8216;E-Mail Addresses&#8217;, &#8216;Snail Mail
+Address Label&#8217;, &#8216;Phone Label&#8217; and &#8216;notes&#8217; fields blank (simply by
+typing &#8216;Enter&#8217;).</p>
+<p>Add another entry for &#8216;David Evans&#8217; in the same manner.</p>
+<p>Now we have two entries, we can navigate and search our embryonic
+BBDB.</p>
+</div>
+<div class="section" id="searching">
+<h2>Searching<a class="headerlink" href="#searching" title="Permalink to this headline">¶</a></h2>
+<p>To examine the contents of BBDB, use:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">M</span><span class="o">-</span><span class="n">x</span> <span class="n">bbdb</span>
+</pre></div>
+</div>
+<p>Type &#8216;return&#8217; to &#8216;Search records using regexp&#8217; which displays all
+entries.</p>
+<p>BBDB then displays all known contacts and the modeline includes
+&#8216;1/2/2&#8217; which indicates the current entry is &#8216;1&#8217; out of a current data
+set of 2 from a grand total of 2.</p>
+<p>The entries are initially sorted by &#8216;Name&#8217; order so &#8216;David Evans&#8217;
+appears first despite being added last.</p>
+<p>Navigation uses the familiar &#8216;n&#8217; (bbdb-next-record) and &#8216;p&#8217;
+(bbdb-prev-record) key bindings.</p>
+<p>You can also search BBDB using &#8216;b&#8217; (&#8216;bbdb&#8217;) which searches across all
+fields. For example, searching for &#8216;evans&#8217; displays a single record
+(&#8216;David Evans&#8217;). The search is case insensitive.</p>
+</div>
+<div class="section" id="updating">
+<h2>Updating<a class="headerlink" href="#updating" title="Permalink to this headline">¶</a></h2>
+<p>Occasionally, you may want to change contact details.  Search BBDB
+(using &#8216;b&#8217;) to find the contact named &#8216;David Evans&#8217;.</p>
+<p>Type &#8216;e&#8217; (&#8216;bbdb-edit-field&#8217;) to change this contact&#8217;s first name to &#8216;Dave&#8217;.</p>
+<p>Save your changes using &#8216;s&#8217; (bbdb-save). Your changes are now saved to
+the BBDB which resides in &#8216;~/.emacs.d/bbdb&#8217; (&#8216;bbdb-file&#8217;) by default.</p>
+</div>
+<div class="section" id="adding-fields">
+<h2>Adding fields<a class="headerlink" href="#adding-fields" title="Permalink to this headline">¶</a></h2>
+<p>Add a new contact called &#8216;Adam Clayton&#8217; using &#8216;c&#8217; (&#8216;bbdb-create&#8217;). This
+time, include additional information for the organization, address,
+phone number and email address as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">For</span> <span class="s1">&#39;Organizations&#39;</span> <span class="n">enter</span><span class="p">,</span> <span class="s1">&#39;Island Records&#39;</span>
+<span class="n">For</span> <span class="n">email</span><span class="p">,</span> <span class="n">enter</span> <span class="s1">&#39;adam.clayton@island.com&#39;</span>
+<span class="n">Street</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span> <span class="o">-</span> <span class="s1">&#39;721 Fifth Avenue&#39;</span>
+<span class="n">Street</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span> <span class="o">-</span> <span class="s1">&#39;Midtown Center&#39;</span>
+<span class="n">Street</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span> <span class="o">-</span> <span class="s1">&#39;Manhattan&#39;</span>
+<span class="n">City</span> <span class="o">-</span> <span class="s1">&#39;New York City&#39;</span>
+<span class="n">State</span> <span class="o">-</span> <span class="s1">&#39;NY&#39;</span>
+<span class="n">Postcode</span> <span class="o">-</span> <span class="mi">10022</span>
+<span class="n">Country</span> <span class="o">-</span> <span class="s1">&#39;US&#39;</span>
+<span class="n">For</span> <span class="s1">&#39;Phone (home), enter &#39;</span><span class="mi">0012127654321</span><span class="s1">&#39;</span>
+<span class="n">For</span> <span class="n">the</span> <span class="s1">&#39;notes&#39;</span> <span class="n">field</span><span class="p">,</span> <span class="n">enter</span> <span class="s1">&#39;U2&#39;</span>
+</pre></div>
+</div>
+<p>Now we have a record populated with five fields in addition to
+&#8216;Name&#8217;. The newly created record is displayed.</p>
+<p>You can use &#8216;t&#8217; (&#8216;toggle-layout&#8217;) to view a brief one line summary and
+&#8216;T&#8217; (&#8216;show-all-fields&#8217;) to expose all fields of the contact. The
+expanded view includes two standard audit timestamp fields that are
+automatically created and maintained by BBDB; &#8216;creation-date&#8217; and
+&#8216;timestamp&#8217;</p>
+<p>For a newly created record, both timestamp fields will be identical
+but the &#8216;timestamp&#8217; field will automatically track whenever a
+subsequent update is made to the record. The timestamps can be
+valuable in purging historic, outdated data and examining recent
+records.</p>
+<p>Use &#8216;TAB&#8217; (&#8216;bbdb-next-field&#8217;) to navigate to the next field and
+&#8216;BACKSPACE&#8217; (&#8216;bbdb-prev-field&#8217;) to go back to the previous field.</p>
+<p>If you made any errors during the creation of the contact, you can
+navigate to the field and then use &#8216;e&#8217; (&#8216;bbdb-edit-field&#8217;) to edit and
+correct the field.</p>
+</div>
+<div class="section" id="searching-on-fields">
+<h2>Searching on fields<a class="headerlink" href="#searching-on-fields" title="Permalink to this headline">¶</a></h2>
+<p>In addition to the general search (&#8216;b&#8217;) which searches across all
+fields, you can also search for contacts on individual fields (which
+is quicker and more efficient for larger databases).</p>
+<p>For example, to search for all contacts with an email address
+containing &#8216;island.com&#8217;, use &#8216;/ m&#8217; and enter &#8216;island&#8217;.</p>
+<p>The full list of field searches is</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="46%" />
+<col width="54%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key binding</th>
+<th class="head">Field</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&#8216;b&#8217;</td>
+<td>General</td>
+</tr>
+<tr class="row-odd"><td>&#8216;/ 1&#8217;</td>
+<td>Single record</td>
+</tr>
+<tr class="row-even"><td>&#8216;/ m&#8217;</td>
+<td>Email</td>
+</tr>
+<tr class="row-odd"><td>&#8216;/ n&#8217;</td>
+<td>Name</td>
+</tr>
+<tr class="row-even"><td>&#8216;/ o&#8217;</td>
+<td>Organization</td>
+</tr>
+<tr class="row-odd"><td>&#8216;/ p&#8217;</td>
+<td>Phone</td>
+</tr>
+<tr class="row-even"><td>&#8216;/ a&#8217;</td>
+<td>Address</td>
+</tr>
+<tr class="row-odd"><td>&#8216;/ x&#8217;</td>
+<td>Xfields</td>
+</tr>
+<tr class="row-even"><td>&#8216;/ m&#8217;</td>
+<td>Email</td>
+</tr>
+<tr class="row-odd"><td>&#8216;/ d&#8217;</td>
+<td>Duplicates</td>
+</tr>
+<tr class="row-even"><td>&#8216;/ c&#8217;</td>
+<td>Changed</td>
+</tr>
+<tr class="row-odd"><td>&#8216;+&#8217;</td>
+<td>Append</td>
+</tr>
+<tr class="row-even"><td>&#8216;!&#8217;</td>
+<td>Invert</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="duplicates">
+<h2>Duplicates<a class="headerlink" href="#duplicates" title="Permalink to this headline">¶</a></h2>
+<p>BBDB offers help in managing a contact database. A common problem is
+that of duplicate entries; a person who has different aliases (&#8216;Dave&#8217;,
+&#8216;David&#8217;) or multiple email addresses (e.g. home, work) or
+historic, outdated fields.</p>
+<p>Add a new entry for &#8216;Larry Mullen&#8217; with an email address of
+<a class="reference external" href="mailto:'larry&#46;mullen&#37;&#52;&#48;islandrecords&#46;com">'larry<span>&#46;</span>mullen<span>&#64;</span>islandrecords<span>&#46;</span>com</a>&#8216;.</p>
+<p>Add another entry for &#8216;Larry Mullen Jnr&#8217; with the same email address
+of <a class="reference external" href="mailto:'larry&#46;mullen&#37;&#52;&#48;islandrecords&#46;com">'larry<span>&#46;</span>mullen<span>&#64;</span>islandrecords<span>&#46;</span>com</a>&#8216;.</p>
+<p>Display all entries using &#8216;b&#8217; and use &#8216;/ d&#8217; (&#8216;bbdb-search-duplicates&#8217;)
+to search for duplicate entries.</p>
+<p>The two similar entries for &#8216;Larry Mullen&#8217; should be displayed.</p>
+<p>To merge these two entries, use M-x bbdb-merge-records. BBDB will use
+the currently displayed record (&#8216;Larry Mullen Jnr&#8217;) as the first entry
+and prompt for the second record:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">merge</span> <span class="n">record</span> <span class="s2">&quot;Larry Mullen Jnr&quot;</span> <span class="n">into</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>Type &#8216;Larry Mullen&#8217; to identify the second record. BBDB will ask:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Use name &quot;Larry Mullen Jnr&quot; instead of &quot;Larry Mullen&quot;? (y or n)
+</pre></div>
+</div>
+<p>followed by:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Keep &quot;Larry Mullen&quot; as an alternate name? (y or n)
+</pre></div>
+</div>
+<p>The single, resulting merged record is now displayed. &#8216;Larry Mullen&#8217;
+is now is an &#8216;AKA&#8217; field for the &#8216;Larry Mullen Jnr&#8217; record.</p>
+</div>
+<div class="section" id="extended-fields">
+<h2>Extended Fields<a class="headerlink" href="#extended-fields" title="Permalink to this headline">¶</a></h2>
+<p>BBDB supports extended fields (&#8216;xfields&#8217;) which allow the user to
+define additional fields for contacts. The predefined &#8216;notes&#8217; field in
+BBDB2 is simply an example of an extended field in BBDB3.</p>
+<p>You can add a note field to an existing contact using &#8216;;&#8217;
+(&#8216;edit-some-field&#8217;).</p>
+<p>As no contacts were initially created with a &#8216;note&#8217; field, BBDB
+prompts:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&quot;notes&quot; is an unknown field name. Define it? (y or n)
+</pre></div>
+</div>
+<p>In addition to the &#8216;notes&#8217; field, you can extend BBDB with additional
+user defined fields.</p>
+<p>Use &#8216;i&#8217; (bbdb-insert-field) to add a new field called &#8216;Instrument&#8217; and
+set this field to &#8216;Guitar&#8217; for Dave Evans.</p>
+<p>Of course, the U2 guitarist is more commonly known as &#8216;The Edge&#8217; so
+navigate to the AKA (&#8216;Also Known As&#8217;) field and add &#8216;The Edge&#8217; as an
+alias for &#8216;David Evans&#8217;.</p>
+</div>
+<div class="section" id="sending-email">
+<h2>Sending email<a class="headerlink" href="#sending-email" title="Permalink to this headline">¶</a></h2>
+<p>BBDB allows sending email to a single contact or a set of contacts.</p>
+<p>Search and navigate to a specfic contact and type &#8216;m&#8217; (&#8216;bbdb-mail&#8217;)
+which composes an email to the current contact.</p>
+<p>If a set of contacts has been created, type &#8216;* m&#8217; to send an email to
+all contacts in the list.</p>
+<p>You can use this feature to manage simple mail groups; if you tag a
+group of contacts with &#8216;curry&#8217;, you can use &#8216;* m&#8217; to invite your
+friends for the traditional Thursday night meal.</p>
+</div>
+<div class="section" id="omitting-an-entry">
+<h2>Omitting an entry<a class="headerlink" href="#omitting-an-entry" title="Permalink to this headline">¶</a></h2>
+<p>If you have selected a list of contacts, it is possible to omit a
+contact (or multiple contacts) from the list of recipients while
+preserving the entry in BBDB.</p>
+<p>You use &#8216;o&#8217; (&#8216;omit-record&#8217;) which hides the entry and type &#8216;* m&#8217; to
+compose an email to the reduced list of contacts.</p>
+</div>
+<div class="section" id="deleting-a-field">
+<h2>Deleting a field<a class="headerlink" href="#deleting-a-field" title="Permalink to this headline">¶</a></h2>
+<p>You can delete the contents of a field by navigating to the field of
+the contact (use &#8216;n&#8217; and &#8216;p&#8217; to navigate between contacts and &#8216;TAB&#8217;
+and &#8216;DEL&#8217; between fields). Once positioned on the correct field, use
+&#8216;d&#8217; or &#8216;C-k&#8217; (which are both bound to &#8216;bbdb-delete-field-or-record&#8217;).</p>
+<p>BBDB will prompt:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>delete this &#39;mail&#39; field (of Michael Stipe)? (y or n).
+</pre></div>
+</div>
+</div>
+<div class="section" id="deleting-an-entry">
+<h2>Deleting an entry<a class="headerlink" href="#deleting-an-entry" title="Permalink to this headline">¶</a></h2>
+<p>Deleting an entry in BBDB is similar. Navigate to the desired entry
+and use &#8216;d&#8217; or C-k.</p>
+<p>BBDB will prompt:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Delete the entry of Stephen Morrissey ? (y or n)
+</pre></div>
+</div>
+<p>Deletions of multiple records is possible in the normal way; selecting
+the desired data set and use C-k. A prompt will be issued for each
+record.</p>
+</div>
+<div class="section" id="birthdays-and-anniversaries">
+<h2>Birthdays and anniversaries<a class="headerlink" href="#birthdays-and-anniversaries" title="Permalink to this headline">¶</a></h2>
+<p>To use birthday and anniversaries in BBDB, you must ensure &#8216;anniv is
+included in the list of parameters when calling &#8216;bbdb-initialize&#8217; in
+&#8216;init.el&#8217;:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">bbdb</span><span class="o">-</span><span class="n">initialize</span> <span class="s1">&#39;gnus &#39;</span><span class="n">message</span> <span class="s1">&#39;anniv)</span>
+</pre></div>
+</div>
+<p>To ensure BBDB birthdays and anniversaries are displayed in the Emacs
+calendar, add the following line to &#8216;init.el&#8217;:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="s1">&#39;diary-list-entries-hook &#39;</span><span class="n">bbdb</span><span class="o">-</span><span class="n">anniv</span><span class="o">-</span><span class="n">diary</span><span class="o">-</span><span class="n">entries</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Birthdays are implemented as another extended field named &#8216;birthday&#8217;.</p>
+<p>Find the contact called &#8216;Adam Clayton&#8217; and add a new extended field
+called &#8216;birthday&#8217; using &#8216;i&#8217; (&#8216;bbdb-insert-field&#8217;)</p>
+<p>The default date format setting is &#8216;American&#8217; (&#8216;mm/dd/yyyy&#8217;) so, to
+add Adam Clayton&#8217;s birthday which is &#8216;13 March 1960&#8217;, enter:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s1">&#39;03/13/1960&#39;</span>
+</pre></div>
+</div>
+<p>The default date format is controlled by the variable
+&#8216;calendar-date-style&#8217; which may be set to:-</p>
+<ul class="simple">
+<li>&#8216;american&#8217; (mm/dd/yyyy - default)</li>
+<li>&#8216;european&#8217; (dd/mm/yyyy)</li>
+<li>&#8216;iso&#8217;      (yyyy/mm/dd)</li>
+</ul>
+<p>Check the birthday has been added to the Emacs calendar:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">M</span><span class="o">-</span><span class="n">x</span> <span class="n">calendar</span>
+</pre></div>
+</div>
+<p>Navigate to 13 March and type &#8216;d&#8217; (diary-view-entries&#8217;). The birthday
+should be displayed as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sunday</span><span class="p">,</span> <span class="n">March</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">2016</span>
+<span class="o">======================</span>
+<span class="n">Adam</span> <span class="n">Clayton</span><span class="s1">&#39;s 56th birthday</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="housekeeping">
+<h2>Housekeeping<a class="headerlink" href="#housekeeping" title="Permalink to this headline">¶</a></h2>
+<p>BBDB uses the built-in audit timestamps (&#8216;creation-date&#8217; and
+&#8216;timestamp&#8217;) to offer useful searches to identify ancient or recent
+records:</p>
+<ul class="simple">
+<li>bbdb-creation-newer</li>
+<li>bbdb-creation-older</li>
+<li>bbdb-timestamp-newer</li>
+<li>bbdb-timestamp-older</li>
+</ul>
+<p>For example, to list all records created before 2014, use
+&#8216;M-x bbdb-creation-older-than&#8217;. BBDB prompts:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s1">&#39;Older than date (yyyy-mm-dd):&#39;</span>
+</pre></div>
+</div>
+<p>Enter &#8216;2014-01-01&#8217; to displayed all contacts created prior to 2014.</p>
+<p>There is a complementary function &#8216;bbdb-creation-newer-than&#8217; to identify
+recently created records.</p>
+<p>Similarly, using the &#8216;timestamp&#8217; field can identify records modified
+in the last month (&#8216;bbdb-timestamp-newer&#8217;).</p>
+<p>Another useful function to assist in identifying records that have
+been created and never subsequently updated is
+&#8216;bbdb-creation-no-change&#8217;.</p>
+</div>
+<div class="section" id="snarfing">
+<h2>Snarfing<a class="headerlink" href="#snarfing" title="Permalink to this headline">¶</a></h2>
+<p>Given a text file with the following .. contents:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Michael</span> <span class="n">Stipe</span>
+<span class="mi">245</span> <span class="n">Dan</span> <span class="n">Rather</span> <span class="n">Avenue</span>
+<span class="n">Atlanta</span>
+<span class="n">GA</span>
+<span class="n">Email</span><span class="p">:</span> <span class="n">stipey</span><span class="nd">@remhq</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+<p>If you highlight the region, position point at &#8216;Michael Stipe&#8217; and
+type &#8216;M-x bbdb-snarf&#8217;, BBDB will attempt to parse the region and
+create a BBDB entry for this individual.</p>
+<p>Unfortunately, snarfing is complex and doesn&#8217;t always deliver perfect
+results:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Michael</span> <span class="n">Stipe</span>
+       <span class="n">mail</span><span class="p">:</span>  <span class="n">stipey</span><span class="nd">@remhq</span><span class="o">.</span><span class="n">com</span>
+       <span class="n">notes</span><span class="p">:</span> <span class="mi">245</span> <span class="n">Dan</span> <span class="n">Rather</span> <span class="n">Avenue</span>
+       <span class="n">Atlanta</span>
+       <span class="n">GA</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="printing">
+<h2>Printing<a class="headerlink" href="#printing" title="Permalink to this headline">¶</a></h2>
+<p>&#8216;bbdb-print&#8217; produces a TeX file for the current set of contacts and
+uses bbdb-print-tex-path (typically /path/to/bbdb/tex) to locate the
+TeX templates.</p>
+<p>BBDB then creates a TeX file which must be processed using TeX (not
+LaTeX) to produce a PDF ready for printing.</p>
+</div>
+<div class="section" id="dialing">
+<h2>Dialing<a class="headerlink" href="#dialing" title="Permalink to this headline">¶</a></h2>
+<p>&#8216;bbdb-dial&#8217; dials the number under point.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Tutorial</a><ul>
+<li><a class="reference internal" href="#creating-an-entry">Creating an entry</a></li>
+<li><a class="reference internal" href="#searching">Searching</a></li>
+<li><a class="reference internal" href="#updating">Updating</a></li>
+<li><a class="reference internal" href="#adding-fields">Adding fields</a></li>
+<li><a class="reference internal" href="#searching-on-fields">Searching on fields</a></li>
+<li><a class="reference internal" href="#duplicates">Duplicates</a></li>
+<li><a class="reference internal" href="#extended-fields">Extended Fields</a></li>
+<li><a class="reference internal" href="#sending-email">Sending email</a></li>
+<li><a class="reference internal" href="#omitting-an-entry">Omitting an entry</a></li>
+<li><a class="reference internal" href="#deleting-a-field">Deleting a field</a></li>
+<li><a class="reference internal" href="#deleting-an-entry">Deleting an entry</a></li>
+<li><a class="reference internal" href="#birthdays-and-anniversaries">Birthdays and anniversaries</a></li>
+<li><a class="reference internal" href="#housekeeping">Housekeeping</a></li>
+<li><a class="reference internal" href="#snarfing">Snarfing</a></li>
+<li><a class="reference internal" href="#printing">Printing</a></li>
+<li><a class="reference internal" href="#dialing">Dialing</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="introduction.html" title="previous chapter">Introduction</a></li>
+      <li>Next: <a href="gnus.html" title="next chapter">Gnus</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/tutorial.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Andy Cowling.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/tutorial.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

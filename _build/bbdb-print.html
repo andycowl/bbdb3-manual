@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Lisp library (bbdb-print) &#8212; BBDBV3 3.1.2 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="BBDBV3 3.1.2 documentation" href="index.html" />
+    <link rel="next" title="Lisp library (bbdb-rmail)" href="bbdb-rmail.html" />
+    <link rel="prev" title="Lisp library (bbdb-pgp)" href="bbdb-pgp.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="lisp-library-bbdb-print">
+<h1>Lisp library (bbdb-print)<a class="headerlink" href="#lisp-library-bbdb-print" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="el.function.bbdb-print">
+<em class="property">Function </em><code class="descname">bbdb-print</code> records file brief<a class="headerlink" href="#el.function.bbdb-print" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Make a TeX FILE for printing RECORDS.
+Interactively, use BBDB prefix \
+\&lt;bbdb-mode-map&gt;\[bbdb-do-all-records], see <a class="reference internal" href="bbdb-com.html#el.function.bbdb-do-all-records" title="bbdb-do-all-records"><code class="docutils literal"><span class="pre">`bbdb-do-all-records'</span></code></a>.
+With prefix BRIEF non-nil, make a brief (one line per record) printout.
+There are various variables for customizing the content and format
+of the printout, notably the variables <a class="reference internal" href="#el.variable.bbdb-print-alist" title="bbdb-print-alist"><code class="docutils literal"><span class="pre">`bbdb-print-alist'</span></code></a> and
+<a class="reference internal" href="#el.variable.bbdb-print-require" title="bbdb-print-require"><code class="docutils literal"><span class="pre">`bbdb-print-require'</span></code></a>.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-print-record">
+<em class="property">Function </em><code class="descname">bbdb-print-record</code> record current-letter brief pofl n-phones n-addresses<a class="headerlink" href="#el.function.bbdb-print-record" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Insert the bbdb RECORD in TeX format in the current buffer.
+CURRENT-LETTER is the first letter of the sortkey of the previous record.
+If this is non-nil and RECORD begins differently, a section heading is output.
+If CURRENT-LETTER is t always produce a heading.
+BRIEF is non-nil for 1-line-per-record printouts.
+PHONE-ON-FIRST-LINE, N-PHONES, and N-ADDRESSES are the respective values
+from <a class="reference internal" href="#el.variable.bbdb-print-alist" title="bbdb-print-alist"><code class="docutils literal"><span class="pre">`bbdb-print-alist'</span></code></a>.
+
+The return value is the new CURRENT-LETTER.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-print-phone">
+<em class="property">Function </em><code class="descname">bbdb-print-phone</code> phone<a class="headerlink" href="#el.function.bbdb-print-phone" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Format PHONE as a string, obeying omit-area-code setting.
+Omit-area-code is one of the allowed symbols in <a class="reference internal" href="#el.variable.bbdb-print-alist" title="bbdb-print-alist"><code class="docutils literal"><span class="pre">`bbdb-print-alist'</span></code></a>.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-print-tex-quote">
+<em class="property">Function </em><code class="descname">bbdb-print-tex-quote</code> string<a class="headerlink" href="#el.function.bbdb-print-tex-quote" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Quote any unquoted TeX special characters that appear in STRING.
+The replacement rules are defined in <a class="reference internal" href="#el.variable.bbdb-print-tex-quote-alist" title="bbdb-print-tex-quote-alist"><code class="docutils literal"><span class="pre">`bbdb-print-tex-quote-alist'</span></code></a>.</pre>
+</dd></dl>
+
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<dl class="variable">
+<dt id="el.variable.bbdb-print-alist">
+<em class="property">Variable </em><code class="descname">bbdb-print-alist</code><a class="headerlink" href="#el.variable.bbdb-print-alist" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Formatting options for <a class="reference internal" href="#el.function.bbdb-print" title="bbdb-print"><code class="docutils literal"><span class="pre">`bbdb-print'</span></code></a>, all formats.
+This is an alist of the form ((option1 . value1) (option2 . value2) ...)
+
+You can have separate settings for brief and non-brief printouts;
+see the variables <a class="reference internal" href="#el.variable.bbdb-print-brief-alist" title="bbdb-print-brief-alist"><code class="docutils literal"><span class="pre">`bbdb-print-brief-alist'</span></code></a> and <a class="reference internal" href="#el.variable.bbdb-print-full-alist" title="bbdb-print-full-alist"><code class="docutils literal"><span class="pre">`bbdb-print-full-alist'</span></code></a>.
+Settings there will override the common settings in this variable.
+
+The possible options and legal values are:
+ - columns: 1, 2, 3, 4 or 'quad (4 little 2-column pages per sheet)
+     or 'grid (12 credit-card-sized pages per sheet).
+ - separator: 0-7, the style of heading for each letter.
+     0=none, 1=line, 2=boxed letters, 3=large boxed letters, 4=large letters,
+     5=letters with lines, 6=letters with suits, 7=boxed letters with suits.
+ - omit-area-code: a regular expression matching area codes to omit.
+ - phone-on-first-line: t means to put first phone number on the same
+     line with the name, nil means just the name.  A string means to
+     use the first phone number whose &quot;label&quot; matches that string,
+     which should be a valid regular expression.
+ - n-phones: maximum number of phone numbers to include.
+ - n-addresses: maximum number of addresses to include.
+ - include-files: list of TeX files to \input.  If these filenames are not
+   absolute, the files must be located somewhere that TeX will find them.
+ - ps-fonts: nonnil means to use them, nil to use standard TeX fonts.
+ - font-size: in points, any integer (assuming fonts in that size exist).
+ - hsize, vsize: horizontal dimension of pages.  String value can be any valid
+   TeX dimension, or nil to use TeX's default.
+ - hoffset, voffset: shift TeX's output rightward (downward) by this distance
+   (any TeX dimension).  Nil or 0 uses TeX's default positioning.
+ - quad-hsize, quad-vsize: for the quad format, horizontal and
+     vertical size of the little pages.  These must be strings which
+     are valid TeX dimensions, eg &quot;10cm&quot;.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-print-full-alist">
+<em class="property">Variable </em><code class="descname">bbdb-print-full-alist</code><a class="headerlink" href="#el.variable.bbdb-print-full-alist" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Extra options for <a class="reference internal" href="#el.function.bbdb-print" title="bbdb-print"><code class="docutils literal"><span class="pre">`bbdb-print'</span></code></a> non-brief format.
+These supplement or override entries in <a class="reference internal" href="#el.variable.bbdb-print-alist" title="bbdb-print-alist"><code class="docutils literal"><span class="pre">`bbdb-print-alist'</span></code></a>; see description
+of possible contents there.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-print-brief-alist">
+<em class="property">Variable </em><code class="descname">bbdb-print-brief-alist</code><a class="headerlink" href="#el.variable.bbdb-print-brief-alist" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Extra Options for <a class="reference internal" href="#el.function.bbdb-print" title="bbdb-print"><code class="docutils literal"><span class="pre">`bbdb-print'</span></code></a>, brief format.
+These supplement or override entries in <a class="reference internal" href="#el.variable.bbdb-print-alist" title="bbdb-print-alist"><code class="docutils literal"><span class="pre">`bbdb-print-alist'</span></code></a>; see description
+of possible contents there.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-print-file">
+<em class="property">Variable </em><code class="descname">bbdb-print-file</code><a class="headerlink" href="#el.variable.bbdb-print-file" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Default file name for printouts of BBDB database.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-print-omit-fields">
+<em class="property">Variable </em><code class="descname">bbdb-print-omit-fields</code><a class="headerlink" href="#el.variable.bbdb-print-omit-fields" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">List of fields NOT to print in address list.
+See also <a class="reference internal" href="#el.variable.bbdb-print-require" title="bbdb-print-require"><code class="docutils literal"><span class="pre">`bbdb-print-require'</span></code></a>.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-print-prolog">
+<em class="property">Variable </em><code class="descname">bbdb-print-prolog</code><a class="headerlink" href="#el.variable.bbdb-print-prolog" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">TeX statements to include at the beginning of the <a class="reference internal" href="#el.function.bbdb-print" title="bbdb-print"><code class="docutils literal"><span class="pre">`bbdb-print'</span></code></a> file.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-print-epilog">
+<em class="property">Variable </em><code class="descname">bbdb-print-epilog</code><a class="headerlink" href="#el.variable.bbdb-print-epilog" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">TeX statements to include at the end of the <a class="reference internal" href="#el.function.bbdb-print" title="bbdb-print"><code class="docutils literal"><span class="pre">`bbdb-print'</span></code></a> file.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-print-mail">
+<em class="property">Variable </em><code class="descname">bbdb-print-mail</code><a class="headerlink" href="#el.variable.bbdb-print-mail" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Whether only the primary or all mail addresses are printed.
+Value <code class="docutils literal"><span class="pre">`primary'</span></code> means print the primary mail address only.
+Value <code class="docutils literal"><span class="pre">`all'</span></code> means print all mail addresses.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-print-tex-quote-alist">
+<em class="property">Variable </em><code class="descname">bbdb-print-tex-quote-alist</code><a class="headerlink" href="#el.variable.bbdb-print-tex-quote-alist" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Replacement alist for quoting TeX's special characters.
+Each element is of the form (REGEXP . REPLACE).</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-print-address-format-list">
+<em class="property">Variable </em><code class="descname">bbdb-print-address-format-list</code><a class="headerlink" href="#el.variable.bbdb-print-address-format-list" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">List of address formatting rules for printing.
+Each element may take the same values as in <a class="reference internal" href="bbdb.html#el.variable.bbdb-address-format-list" title="bbdb-address-format-list"><code class="docutils literal"><span class="pre">`bbdb-address-format-list'</span></code></a>.
+The EDIT elements of <a class="reference internal" href="bbdb.html#el.variable.bbdb-address-format-list" title="bbdb-address-format-list"><code class="docutils literal"><span class="pre">`bbdb-address-format-list'</span></code></a> are ignored.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-print-name-format">
+<em class="property">Variable </em><code class="descname">bbdb-print-name-format</code><a class="headerlink" href="#el.variable.bbdb-print-name-format" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Format for names when printing BBDB.
+If first-last format names as &quot;Firstname Lastname&quot;.
+If last-first format names as &quot;Lastname, Firstname&quot;.
+If <a class="reference internal" href="#el.variable.bbdb-print-name" title="bbdb-print-name"><code class="docutils literal"><span class="pre">`bbdb-print-name'</span></code></a> returns the full name as a single, preformatted string,
+this takes precedence over <a class="reference internal" href="#el.variable.bbdb-print-name-format" title="bbdb-print-name-format"><code class="docutils literal"><span class="pre">`bbdb-print-name-format'</span></code></a>.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-print-name">
+<em class="property">Variable </em><code class="descname">bbdb-print-name</code><a class="headerlink" href="#el.variable.bbdb-print-name" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Xfield holding the full print name for a record.
+This may also be a function taking one argument, a record.
+If it returns the full print name as a single string, this is used &quot;as is&quot;.
+If it returns a cons pair (FIRST . LAST) with the first and last name
+for this record, these are formatted obeying <a class="reference internal" href="#el.variable.bbdb-print-name-format" title="bbdb-print-name-format"><code class="docutils literal"><span class="pre">`bbdb-print-name-format'</span></code></a>.
+In any case, this function should call <a class="reference internal" href="#el.function.bbdb-print-tex-quote" title="bbdb-print-tex-quote"><code class="docutils literal"><span class="pre">`bbdb-print-tex-quote'</span></code></a> as needed.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-print-require">
+<em class="property">Variable </em><code class="descname">bbdb-print-require</code><a class="headerlink" href="#el.variable.bbdb-print-require" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">What fields are required for printing a record.
+This is a lisp expression and a record will be printed only if the evaluation
+of this expression yields a non-nil value for this records.
+The symbols name, organization, mail, phone, address, and notes will be set
+to appropriate values when this is evaluated; they will be nil if the field
+does not exist or is elided.
+
+The value of this variable can be any lisp expression, but typically
+it will be a boolean combination of the field variables, as in
+the following examples:
+
+  Print only people whose phone numbers are known:
+    (setq bbdb-print-require 'phone)
+  Print people whose names and organizations are known:
+    (setq bbdb-print-require '(and name organization))
+  Print people whose names, and either addresses or phone numbers are known:
+    (setq bbdb-print-require '(and name (or address phone))).</pre>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Lisp library (bbdb-print)</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="bbdb-pgp.html" title="previous chapter">Lisp library (bbdb-pgp)</a></li>
+      <li>Next: <a href="bbdb-rmail.html" title="next chapter">Lisp library (bbdb-rmail)</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/bbdb-print.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Andy Cowling.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/bbdb-print.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

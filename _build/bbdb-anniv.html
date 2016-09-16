@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Lisp library (bbdb-anniv) &#8212; BBDBV3 3.1.2 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="BBDBV3 3.1.2 documentation" href="index.html" />
+    <link rel="next" title="Lisp library (bbdb-com)" href="bbdb-com.html" />
+    <link rel="prev" title="Lisp library (bbdb)" href="bbdb.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="lisp-library-bbdb-anniv">
+<h1>Lisp library (bbdb-anniv)<a class="headerlink" href="#lisp-library-bbdb-anniv" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="el.function.bbdb-anniv-diary-entries">
+<em class="property">Function </em><code class="descname">bbdb-anniv-diary-entries</code> <a class="headerlink" href="#el.function.bbdb-anniv-diary-entries" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Add anniversaries from BBDB records to <code class="docutils literal"><span class="pre">`diary-list-entries'</span></code>.
+This obeys <code class="docutils literal"><span class="pre">`calendar-date-style'</span></code> via <code class="docutils literal"><span class="pre">`diary-date-forms'</span></code>.
+To enable this feature, put the following into your .emacs:
+
+ \(add-hook 'diary-list-entries-hook 'bbdb-anniv-diary-entries)</pre>
+</dd></dl>
+
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<dl class="variable">
+<dt id="el.variable.bbdb-anniv-alist">
+<em class="property">Variable </em><code class="descname">bbdb-anniv-alist</code><a class="headerlink" href="#el.variable.bbdb-anniv-alist" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Alist of rules for formatting anniversaries in the diary buffer.
+Each element is of the form (LABEL . FORM).
+LABEL is the xfield where this type of anniversaries is stored.
+FORM is a format string with the following substitutions:
+  %n  name of the record
+  %d  number of years
+  %s  ordinal suffix (st, nd, rd, th) for the year.
+  %t  the optional text following the date string in field LABEL.
+If FORM is nil, use the text following the date string in field LABEL
+as format string.</pre>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Lisp library (bbdb-anniv)</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="bbdb.html" title="previous chapter">Lisp library (bbdb)</a></li>
+      <li>Next: <a href="bbdb-com.html" title="next chapter">Lisp library (bbdb-com)</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/bbdb-anniv.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Andy Cowling.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/bbdb-anniv.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

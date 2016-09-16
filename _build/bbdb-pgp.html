@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Lisp library (bbdb-pgp) &#8212; BBDBV3 3.1.2 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="BBDBV3 3.1.2 documentation" href="index.html" />
+    <link rel="next" title="Lisp library (bbdb-print)" href="bbdb-print.html" />
+    <link rel="prev" title="Lisp library (bbdb-mua)" href="bbdb-mua.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="lisp-library-bbdb-pgp">
+<h1>Lisp library (bbdb-pgp)<a class="headerlink" href="#lisp-library-bbdb-pgp" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="el.function.bbdb-pgp">
+<em class="property">Function </em><code class="descname">bbdb-pgp</code> <a class="headerlink" href="#el.function.bbdb-pgp" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Add PGP MML tags to a message according to the recipients' BBDB records.
+For all message recipients in <a class="reference internal" href="#el.variable.bbdb-pgp-headers" title="bbdb-pgp-headers"><code class="docutils literal"><span class="pre">`bbdb-pgp-headers'</span></code></a>, this grabs the action
+in <a class="reference internal" href="#el.variable.bbdb-pgp-field" title="bbdb-pgp-field"><code class="docutils literal"><span class="pre">`bbdb-pgp-field'</span></code></a> of their BBDB records.  If this proposes multiple actions,
+perform the action which appears first in <a class="reference internal" href="#el.variable.bbdb-pgp-ranked-actions" title="bbdb-pgp-ranked-actions"><code class="docutils literal"><span class="pre">`bbdb-pgp-ranked-actions'</span></code></a>.
+If this proposes no action at all, use <a class="reference internal" href="#el.variable.bbdb-pgp-default" title="bbdb-pgp-default"><code class="docutils literal"><span class="pre">`bbdb-pgp-default'</span></code></a>.
+The variable <a class="reference internal" href="#el.variable.bbdb-pgp-method" title="bbdb-pgp-method"><code class="docutils literal"><span class="pre">`bbdb-pgp-method'</span></code></a> defines the method which is actually used
+for signing and encrypting.
+
+This command works with both <code class="docutils literal"><span class="pre">`mail-mode'</span></code> and <code class="docutils literal"><span class="pre">`message-mode'</span></code> to send
+signed or encrypted mail.
+
+To run this command automatically when sending a message,
+use <a class="reference internal" href="bbdb.html#el.function.bbdb-initialize" title="bbdb-initialize"><code class="docutils literal"><span class="pre">`bbdb-initialize'</span></code></a> with arg <code class="docutils literal"><span class="pre">`pgp'</span></code> to add this function
+to <code class="docutils literal"><span class="pre">`message-send-hook'</span></code> and <code class="docutils literal"><span class="pre">`mail-send-hook'</span></code>.
+Yet see info node <a class="reference external" href="http://www.gnu.org/software/emacs/manual/html_node/message/Signing-and-encryption.html#Signing-and-encryption" title="(message)Signing and encryption"><em>`(message)Signing and encryption'</em></a> why you
+might not want to rely for encryption on a hook function
+which runs just before the message is sent, that is, you might want
+to call the command <a class="reference internal" href="#el.function.bbdb-pgp" title="bbdb-pgp"><code class="docutils literal"><span class="pre">`bbdb-pgp'</span></code></a> manually, then call <code class="docutils literal"><span class="pre">`mml-preview'</span></code>.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-read-xfield-pgp-mail">
+<em class="property">Function </em><code class="descname">bbdb-read-xfield-pgp-mail</code> <em class="property"> &amp;optional </em>init<a class="headerlink" href="#el.function.bbdb-read-xfield-pgp-mail" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Set <a class="reference internal" href="#el.variable.bbdb-pgp-field" title="bbdb-pgp-field"><code class="docutils literal"><span class="pre">`bbdb-pgp-field'</span></code></a>, requiring match with <a class="reference internal" href="#el.variable.bbdb-pgp-ranked-actions" title="bbdb-pgp-ranked-actions"><code class="docutils literal"><span class="pre">`bbdb-pgp-ranked-actions'</span></code></a>.</pre>
+</dd></dl>
+
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<dl class="variable">
+<dt id="el.variable.bbdb-pgp-default">
+<em class="property">Variable </em><code class="descname">bbdb-pgp-default</code><a class="headerlink" href="#el.variable.bbdb-pgp-default" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Default action when sending a message and the recipients are not in BBDB.
+This should be one of the following symbols:
+  nil             Do nothing
+  sign            Sign the message
+  sign-query      Query whether to sign the message
+  encrypt         Encrypt the message
+  encrypt-query   Query whether to encrypt the message
+See info node <a class="reference external" href="http://www.gnu.org/software/emacs/manual/html_node/message/security.html#security" title="(message)security"><em>`(message)security'</em></a>.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-pgp-field">
+<em class="property">Variable </em><code class="descname">bbdb-pgp-field</code><a class="headerlink" href="#el.variable.bbdb-pgp-field" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">BBDB xfield holding the PGP action.
+If the recipient of a message has this xfield in his/her BBDB record,
+its value determines whether <a class="reference internal" href="#el.function.bbdb-pgp" title="bbdb-pgp"><code class="docutils literal"><span class="pre">`bbdb-pgp'</span></code></a> signs or encrypts the message.
+The value of this xfield should be one of the following symbols:
+  sign            Sign the message
+  sign-query      Query whether to sign the message
+  encrypt         Encrypt the message
+  encrypt-query   Query whether to encrypt the message
+If the xfield is absent use <a class="reference internal" href="#el.variable.bbdb-pgp-default" title="bbdb-pgp-default"><code class="docutils literal"><span class="pre">`bbdb-pgp-default'</span></code></a>.
+See also info node <a class="reference external" href="http://www.gnu.org/software/emacs/manual/html_node/message/security.html#security" title="(message)security"><em>`(message)security'</em></a>.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-pgp-ranked-actions">
+<em class="property">Variable </em><code class="descname">bbdb-pgp-ranked-actions</code><a class="headerlink" href="#el.variable.bbdb-pgp-ranked-actions" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Ranked list of actions when sending a message.
+If a message has multiple recipients such that their BBDB records specify
+different actions for this message, <a class="reference internal" href="#el.function.bbdb-pgp" title="bbdb-pgp"><code class="docutils literal"><span class="pre">`bbdb-pgp'</span></code></a> will perform the action
+which appears first in <a class="reference internal" href="#el.variable.bbdb-pgp-ranked-actions" title="bbdb-pgp-ranked-actions"><code class="docutils literal"><span class="pre">`bbdb-pgp-ranked-actions'</span></code></a>.
+This list should include the following four symbols:
+  sign            Sign the message
+  sign-query      Query whether to sign the message
+  encrypt         Encrypt the message
+  encrypt-query   Query whether to encrypt the message.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-pgp-headers">
+<em class="property">Variable </em><code class="descname">bbdb-pgp-headers</code><a class="headerlink" href="#el.variable.bbdb-pgp-headers" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Message headers to look at.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-pgp-method">
+<em class="property">Variable </em><code class="descname">bbdb-pgp-method</code><a class="headerlink" href="#el.variable.bbdb-pgp-method" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Method for signing and encrypting messages.
+It should be one of the keys of <a class="reference internal" href="#el.variable.bbdb-pgp-method-alist" title="bbdb-pgp-method-alist"><code class="docutils literal"><span class="pre">`bbdb-pgp-method-alist'</span></code></a>.
+The default methods include
+  pgp       Add MML tags for PGP format
+  pgpauto   Add MML tags for PGP-auto format
+  pgpmime   Add MML tags for PGP/MIME
+  smime     Add MML tags for S/MIME
+See info node <a class="reference external" href="http://www.gnu.org/software/emacs/manual/html_node/message/security.html#security" title="(message)security"><em>`(message)security'</em></a>.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-pgp-method-alist">
+<em class="property">Variable </em><code class="descname">bbdb-pgp-method-alist</code><a class="headerlink" href="#el.variable.bbdb-pgp-method-alist" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Alist of methods for signing and encrypting a message with <a class="reference internal" href="#el.function.bbdb-pgp" title="bbdb-pgp"><code class="docutils literal"><span class="pre">`bbdb-pgp'</span></code></a>.
+Each method is a list (KEY SIGN ENCRYPT).
+The symbol KEY identifies the method.  The function SIGN signs the message;
+the function ENCRYPT encrypts it.  These functions take no arguments.
+The default methods include
+  pgp       Add MML tags for PGP format
+  pgpauto   Add MML tags for PGP-auto format
+  pgpmime   Add MML tags for PGP/MIME
+  smime     Add MML tags for S/MIME
+See info node <a class="reference external" href="http://www.gnu.org/software/emacs/manual/html_node/message/security.html#security" title="(message)security"><em>`(message)security'</em></a>.</pre>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Lisp library (bbdb-pgp)</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="bbdb-mua.html" title="previous chapter">Lisp library (bbdb-mua)</a></li>
+      <li>Next: <a href="bbdb-print.html" title="next chapter">Lisp library (bbdb-print)</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/bbdb-pgp.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Andy Cowling.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/bbdb-pgp.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Lisp library (bbdb-snarf) &#8212; BBDBV3 3.1.2 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="BBDBV3 3.1.2 documentation" href="index.html" />
+    <link rel="next" title="Lisp library (bbdb-vm)" href="bbdb-vm.html" />
+    <link rel="prev" title="Lisp library (bbdb-site)" href="bbdb-site.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="lisp-library-bbdb-snarf">
+<h1>Lisp library (bbdb-snarf)<a class="headerlink" href="#lisp-library-bbdb-snarf" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="el.function.bbdb-snarf-surrounding-space">
+<em class="property">Function </em><code class="descname">bbdb-snarf-surrounding-space</code> record<a class="headerlink" href="#el.function.bbdb-snarf-surrounding-space" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Discard beginning and trailing space when snarfing RECORD.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-snarf-empty-lines">
+<em class="property">Function </em><code class="descname">bbdb-snarf-empty-lines</code> record<a class="headerlink" href="#el.function.bbdb-snarf-empty-lines" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Discard empty lines when snarfing RECORD.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-snarf-name">
+<em class="property">Function </em><code class="descname">bbdb-snarf-name</code> record<a class="headerlink" href="#el.function.bbdb-snarf-name" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Snarf name for RECORD.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-snarf-name-mail">
+<em class="property">Function </em><code class="descname">bbdb-snarf-name-mail</code> record<a class="headerlink" href="#el.function.bbdb-snarf-name-mail" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Snarf name from mail address for RECORD.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-snarf-mail">
+<em class="property">Function </em><code class="descname">bbdb-snarf-mail</code> record<a class="headerlink" href="#el.function.bbdb-snarf-mail" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Snarf mail addresses for RECORD.
+This uses the first subexpresion of <a class="reference internal" href="#el.variable.bbdb-snarf-mail-regexp" title="bbdb-snarf-mail-regexp"><code class="docutils literal"><span class="pre">`bbdb-snarf-mail-regexp'</span></code></a>.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-snarf-label">
+<em class="property">Function </em><code class="descname">bbdb-snarf-label</code> field<a class="headerlink" href="#el.function.bbdb-snarf-label" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Extract the label before point, or return default label for FIELD.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-snarf-phone-nanp">
+<em class="property">Function </em><code class="descname">bbdb-snarf-phone-nanp</code> record<a class="headerlink" href="#el.function.bbdb-snarf-phone-nanp" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Snarf NANP phone numbers for RECORD.
+NANP is the North American Numbering Plan used in North and Central America.
+This uses the first subexpresion of <a class="reference internal" href="#el.variable.bbdb-snarf-phone-nanp-regexp" title="bbdb-snarf-phone-nanp-regexp"><code class="docutils literal"><span class="pre">`bbdb-snarf-phone-nanp-regexp'</span></code></a>.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-snarf-phone-eu">
+<em class="property">Function </em><code class="descname">bbdb-snarf-phone-eu</code> record <em class="property"> &amp;optional </em>phone-regexp<a class="headerlink" href="#el.function.bbdb-snarf-phone-eu" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Snarf European phone numbers for RECORD.
+PHONE-REGEXP is the regexp to match a phone number.
+It defaults to <a class="reference internal" href="#el.variable.bbdb-snarf-phone-eu-regexp" title="bbdb-snarf-phone-eu-regexp"><code class="docutils literal"><span class="pre">`bbdb-snarf-phone-eu-regexp'</span></code></a>.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-snarf-streets">
+<em class="property">Function </em><code class="descname">bbdb-snarf-streets</code> address<a class="headerlink" href="#el.function.bbdb-snarf-streets" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Snarf streets for ADDRESS.  This assumes a narrowed region.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-snarf-address-us">
+<em class="property">Function </em><code class="descname">bbdb-snarf-address-us</code> record<a class="headerlink" href="#el.function.bbdb-snarf-address-us" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Snarf a US address for RECORD.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-snarf-address-eu">
+<em class="property">Function </em><code class="descname">bbdb-snarf-address-eu</code> record <em class="property"> &amp;optional </em>postcode-regexp country<a class="headerlink" href="#el.function.bbdb-snarf-address-eu" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Snarf a European address for RECORD.
+POSTCODE-REGEXP is a regexp matching the postcode assumed to appear
+at the beginning of a line followed by the name of the city.  This format
+is used in many continental European countries.
+POSTCODE-REGEXP defaults to <a class="reference internal" href="#el.variable.bbdb-snarf-postcode-eu-regexp" title="bbdb-snarf-postcode-eu-regexp"><code class="docutils literal"><span class="pre">`bbdb-snarf-postcode-eu-regexp'</span></code></a>.
+COUNTRY is the country to use.  It defaults to <a class="reference internal" href="#el.variable.bbdb-snarf-address-eu-country" title="bbdb-snarf-address-eu-country"><code class="docutils literal"><span class="pre">`bbdb-snarf-address-eu-country'</span></code></a>.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property">Function </em><code class="descname">bbdb-snarf-address-eu</code> record <em class="property"> &amp;optional </em>postcode-regexp country</dt>
+<dd><pre class="el-docstring-block">Snarf a European address for RECORD.
+POSTCODE-REGEXP is a regexp matching the postcode assumed to appear
+at the beginning of a line followed by the name of the city.  This format
+is used in many continental European countries.
+POSTCODE-REGEXP defaults to <a class="reference internal" href="#el.variable.bbdb-snarf-postcode-eu-regexp" title="bbdb-snarf-postcode-eu-regexp"><code class="docutils literal"><span class="pre">`bbdb-snarf-postcode-eu-regexp'</span></code></a>.
+COUNTRY is the country to use.  It defaults to <a class="reference internal" href="#el.variable.bbdb-snarf-address-eu-country" title="bbdb-snarf-address-eu-country"><code class="docutils literal"><span class="pre">`bbdb-snarf-address-eu-country'</span></code></a>.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-snarf-url">
+<em class="property">Function </em><code class="descname">bbdb-snarf-url</code> record<a class="headerlink" href="#el.function.bbdb-snarf-url" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Snarf URL for RECORD.
+This uses the first subexpresion of <a class="reference internal" href="#el.variable.bbdb-snarf-url-regexp" title="bbdb-snarf-url-regexp"><code class="docutils literal"><span class="pre">`bbdb-snarf-url-regexp'</span></code></a>.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-snarf-notes">
+<em class="property">Function </em><code class="descname">bbdb-snarf-notes</code> record<a class="headerlink" href="#el.function.bbdb-snarf-notes" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Snarf notes for RECORD.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-snarf-paragraph">
+<em class="property">Function </em><code class="descname">bbdb-snarf-paragraph</code> pos <em class="property"> &amp;optional </em>rule<a class="headerlink" href="#el.function.bbdb-snarf-paragraph" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Snarf BBDB record from paragraph around position POS using RULE.
+The paragraph is the one that contains POS or follows POS.
+Interactively POS is the position of point.
+RULE defaults to <a class="reference internal" href="#el.variable.bbdb-snarf-rule-default" title="bbdb-snarf-rule-default"><code class="docutils literal"><span class="pre">`bbdb-snarf-rule-default'</span></code></a>.
+See <a class="reference internal" href="#el.variable.bbdb-snarf-rule-alist" title="bbdb-snarf-rule-alist"><code class="docutils literal"><span class="pre">`bbdb-snarf-rule-alist'</span></code></a> for details.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-snarf-yank">
+<em class="property">Function </em><code class="descname">bbdb-snarf-yank</code> <em class="property"> &amp;optional </em>rule<a class="headerlink" href="#el.function.bbdb-snarf-yank" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Snarf a BBDB record from latest kill using RULE.
+The latest kill may also be a window system selection, see <code class="docutils literal"><span class="pre">`current-kill'</span></code>.
+RULE defaults to <a class="reference internal" href="#el.variable.bbdb-snarf-rule-default" title="bbdb-snarf-rule-default"><code class="docutils literal"><span class="pre">`bbdb-snarf-rule-default'</span></code></a>.
+See <a class="reference internal" href="#el.variable.bbdb-snarf-rule-alist" title="bbdb-snarf-rule-alist"><code class="docutils literal"><span class="pre">`bbdb-snarf-rule-alist'</span></code></a> for details.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-snarf">
+<em class="property">Function </em><code class="descname">bbdb-snarf</code> string <em class="property"> &amp;optional </em>rule<a class="headerlink" href="#el.function.bbdb-snarf" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Snarf a BBDB record in STRING using RULE.  Display and return this record.
+Interactively, STRING is the current region.
+RULE defaults to <a class="reference internal" href="#el.variable.bbdb-snarf-rule-default" title="bbdb-snarf-rule-default"><code class="docutils literal"><span class="pre">`bbdb-snarf-rule-default'</span></code></a>.
+See <a class="reference internal" href="#el.variable.bbdb-snarf-rule-alist" title="bbdb-snarf-rule-alist"><code class="docutils literal"><span class="pre">`bbdb-snarf-rule-alist'</span></code></a> for details.</pre>
+</dd></dl>
+
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<dl class="variable">
+<dt id="el.variable.bbdb-snarf-rule-alist">
+<em class="property">Variable </em><code class="descname">bbdb-snarf-rule-alist</code><a class="headerlink" href="#el.variable.bbdb-snarf-rule-alist" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Alist of rules for snarfing.
+Each rule is of the form (KEY FUNCTION FUNCTION ...).
+The symbol KEY identifies the rule, see also <a class="reference internal" href="#el.variable.bbdb-snarf-rule-default" title="bbdb-snarf-rule-default"><code class="docutils literal"><span class="pre">`bbdb-snarf-rule-default'</span></code></a>.
+
+Snarfing is a cumulative process.  The text is copied to a temporary
+snarf buffer that becomes current during snarfing.
+Each FUNCTION is called with one arg, the RECORD we are snarfing,
+and with point at the beginning of the snarf buffer.  FUNCTION should populate
+the fields of RECORD.  It may delete the part of the snarf buffer
+that it has processed so that the remaining FUNCTIONs operate only
+on those parts that were not yet snarfed.  The order of the FUNCTION calls
+in a rule is then crucial.
+Unlike other parts of BBDB, FUNCTIONs need not update the cache and
+hash table for RECORD which is done at the end by <a class="reference internal" href="#el.function.bbdb-snarf" title="bbdb-snarf"><code class="docutils literal"><span class="pre">`bbdb-snarf'</span></code></a>.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-snarf-rule-default">
+<em class="property">Variable </em><code class="descname">bbdb-snarf-rule-default</code><a class="headerlink" href="#el.variable.bbdb-snarf-rule-default" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Default rule for snarfing.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-snarf-mail-regexp">
+<em class="property">Variable </em><code class="descname">bbdb-snarf-mail-regexp</code><a class="headerlink" href="#el.variable.bbdb-snarf-mail-regexp" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Regexp matching a mail address.  Case is ignored.
+The first subexpression becomes the mail address.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-snarf-name-regexp">
+<em class="property">Variable </em><code class="descname">bbdb-snarf-name-regexp</code><a class="headerlink" href="#el.variable.bbdb-snarf-name-regexp" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Regexp matching a name.  Case is ignored.
+The first subexpression becomes the name.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-snarf-default-label-alist">
+<em class="property">Variable </em><code class="descname">bbdb-snarf-default-label-alist</code><a class="headerlink" href="#el.variable.bbdb-snarf-default-label-alist" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Default labels for snarfing.
+This is an alist where each element is a cons pair (FIELD . LABEL).
+The symbol FIELD denotes a record field like <code class="docutils literal"><span class="pre">`phone'</span></code> or <code class="docutils literal"><span class="pre">`address'</span></code>.
+The string LABEL denotes the default label for FIELD.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-snarf-phone-nanp-regexp">
+<em class="property">Variable </em><code class="descname">bbdb-snarf-phone-nanp-regexp</code><a class="headerlink" href="#el.variable.bbdb-snarf-phone-nanp-regexp" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Regexp matching a NANP phone number.  Case is ignored.
+NANP is the North American Numbering Plan used in North and Central America.
+The first subexpression becomes the phone number.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-snarf-phone-eu-regexp">
+<em class="property">Variable </em><code class="descname">bbdb-snarf-phone-eu-regexp</code><a class="headerlink" href="#el.variable.bbdb-snarf-phone-eu-regexp" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Regexp matching a European phone number.
+The first subexpression becomes the phone number.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-snarf-postcode-eu-regexp">
+<em class="property">Variable </em><code class="descname">bbdb-snarf-postcode-eu-regexp</code><a class="headerlink" href="#el.variable.bbdb-snarf-postcode-eu-regexp" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Regexp matching many European postcodes.
+<a class="reference internal" href="#el.function.bbdb-snarf-address-eu" title="bbdb-snarf-address-eu"><code class="docutils literal"><span class="pre">`bbdb-snarf-address-eu'</span></code></a> assumes that the address appears at the beginning
+of a line followed by the name of the city.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-snarf-address-us-country">
+<em class="property">Variable </em><code class="descname">bbdb-snarf-address-us-country</code><a class="headerlink" href="#el.variable.bbdb-snarf-address-us-country" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Country to use for US addresses.  If nil leave country blank.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-snarf-address-eu-country">
+<em class="property">Variable </em><code class="descname">bbdb-snarf-address-eu-country</code><a class="headerlink" href="#el.variable.bbdb-snarf-address-eu-country" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Country to use for EU addresses.  If nil leave country blank.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-snarf-url">
+<em class="property">Variable </em><code class="descname">bbdb-snarf-url</code><a class="headerlink" href="#el.variable.bbdb-snarf-url" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">What xfield BBDB should use for URLs, or nil to not snarf URLs.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb-snarf-url-regexp">
+<em class="property">Variable </em><code class="descname">bbdb-snarf-url-regexp</code><a class="headerlink" href="#el.variable.bbdb-snarf-url-regexp" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Regexp matching a URL.  Case is ignored.
+The first subexpression becomes the URL.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<em class="property">Variable </em><code class="descname">bbdb-snarf-rule-alist</code></dt>
+<dd><pre class="el-docstring-block">Alist of rules for snarfing.
+Each rule is of the form (KEY FUNCTION FUNCTION ...).
+The symbol KEY identifies the rule, see also <a class="reference internal" href="#el.variable.bbdb-snarf-rule-default" title="bbdb-snarf-rule-default"><code class="docutils literal"><span class="pre">`bbdb-snarf-rule-default'</span></code></a>.
+
+Snarfing is a cumulative process.  The text is copied to a temporary
+snarf buffer that becomes current during snarfing.
+Each FUNCTION is called with one arg, the RECORD we are snarfing,
+and with point at the beginning of the snarf buffer.  FUNCTION should populate
+the fields of RECORD.  It may delete the part of the snarf buffer
+that it has processed so that the remaining FUNCTIONs operate only
+on those parts that were not yet snarfed.  The order of the FUNCTION calls
+in a rule is then crucial.
+Unlike other parts of BBDB, FUNCTIONs need not update the cache and
+hash table for RECORD which is done at the end by <a class="reference internal" href="#el.function.bbdb-snarf" title="bbdb-snarf"><code class="docutils literal"><span class="pre">`bbdb-snarf'</span></code></a>.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<em class="property">Variable </em><code class="descname">bbdb-snarf-rule-alist</code></dt>
+<dd><pre class="el-docstring-block">Alist of rules for snarfing.
+Each rule is of the form (KEY FUNCTION FUNCTION ...).
+The symbol KEY identifies the rule, see also <a class="reference internal" href="#el.variable.bbdb-snarf-rule-default" title="bbdb-snarf-rule-default"><code class="docutils literal"><span class="pre">`bbdb-snarf-rule-default'</span></code></a>.
+
+Snarfing is a cumulative process.  The text is copied to a temporary
+snarf buffer that becomes current during snarfing.
+Each FUNCTION is called with one arg, the RECORD we are snarfing,
+and with point at the beginning of the snarf buffer.  FUNCTION should populate
+the fields of RECORD.  It may delete the part of the snarf buffer
+that it has processed so that the remaining FUNCTIONs operate only
+on those parts that were not yet snarfed.  The order of the FUNCTION calls
+in a rule is then crucial.
+Unlike other parts of BBDB, FUNCTIONs need not update the cache and
+hash table for RECORD which is done at the end by <a class="reference internal" href="#el.function.bbdb-snarf" title="bbdb-snarf"><code class="docutils literal"><span class="pre">`bbdb-snarf'</span></code></a>.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<em class="property">Variable </em><code class="descname">bbdb-snarf-rule-alist</code></dt>
+<dd><pre class="el-docstring-block">Alist of rules for snarfing.
+Each rule is of the form (KEY FUNCTION FUNCTION ...).
+The symbol KEY identifies the rule, see also <a class="reference internal" href="#el.variable.bbdb-snarf-rule-default" title="bbdb-snarf-rule-default"><code class="docutils literal"><span class="pre">`bbdb-snarf-rule-default'</span></code></a>.
+
+Snarfing is a cumulative process.  The text is copied to a temporary
+snarf buffer that becomes current during snarfing.
+Each FUNCTION is called with one arg, the RECORD we are snarfing,
+and with point at the beginning of the snarf buffer.  FUNCTION should populate
+the fields of RECORD.  It may delete the part of the snarf buffer
+that it has processed so that the remaining FUNCTIONs operate only
+on those parts that were not yet snarfed.  The order of the FUNCTION calls
+in a rule is then crucial.
+Unlike other parts of BBDB, FUNCTIONs need not update the cache and
+hash table for RECORD which is done at the end by <a class="reference internal" href="#el.function.bbdb-snarf" title="bbdb-snarf"><code class="docutils literal"><span class="pre">`bbdb-snarf'</span></code></a>.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<em class="property">Variable </em><code class="descname">bbdb-snarf-rule-alist</code></dt>
+<dd><pre class="el-docstring-block">Alist of rules for snarfing.
+Each rule is of the form (KEY FUNCTION FUNCTION ...).
+The symbol KEY identifies the rule, see also <a class="reference internal" href="#el.variable.bbdb-snarf-rule-default" title="bbdb-snarf-rule-default"><code class="docutils literal"><span class="pre">`bbdb-snarf-rule-default'</span></code></a>.
+
+Snarfing is a cumulative process.  The text is copied to a temporary
+snarf buffer that becomes current during snarfing.
+Each FUNCTION is called with one arg, the RECORD we are snarfing,
+and with point at the beginning of the snarf buffer.  FUNCTION should populate
+the fields of RECORD.  It may delete the part of the snarf buffer
+that it has processed so that the remaining FUNCTIONs operate only
+on those parts that were not yet snarfed.  The order of the FUNCTION calls
+in a rule is then crucial.
+Unlike other parts of BBDB, FUNCTIONs need not update the cache and
+hash table for RECORD which is done at the end by <a class="reference internal" href="#el.function.bbdb-snarf" title="bbdb-snarf"><code class="docutils literal"><span class="pre">`bbdb-snarf'</span></code></a>.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt>
+<em class="property">Variable </em><code class="descname">bbdb-snarf-rule-alist</code></dt>
+<dd><pre class="el-docstring-block">Alist of rules for snarfing.
+Each rule is of the form (KEY FUNCTION FUNCTION ...).
+The symbol KEY identifies the rule, see also <a class="reference internal" href="#el.variable.bbdb-snarf-rule-default" title="bbdb-snarf-rule-default"><code class="docutils literal"><span class="pre">`bbdb-snarf-rule-default'</span></code></a>.
+
+Snarfing is a cumulative process.  The text is copied to a temporary
+snarf buffer that becomes current during snarfing.
+Each FUNCTION is called with one arg, the RECORD we are snarfing,
+and with point at the beginning of the snarf buffer.  FUNCTION should populate
+the fields of RECORD.  It may delete the part of the snarf buffer
+that it has processed so that the remaining FUNCTIONs operate only
+on those parts that were not yet snarfed.  The order of the FUNCTION calls
+in a rule is then crucial.
+Unlike other parts of BBDB, FUNCTIONs need not update the cache and
+hash table for RECORD which is done at the end by <a class="reference internal" href="#el.function.bbdb-snarf" title="bbdb-snarf"><code class="docutils literal"><span class="pre">`bbdb-snarf'</span></code></a>.</pre>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Lisp library (bbdb-snarf)</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="bbdb-site.html" title="previous chapter">Lisp library (bbdb-site)</a></li>
+      <li>Next: <a href="bbdb-vm.html" title="next chapter">Lisp library (bbdb-vm)</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/bbdb-snarf.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Andy Cowling.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/bbdb-snarf.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

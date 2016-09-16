@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Lisp library (bbdb-vm) &#8212; BBDBV3 3.1.2 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="BBDBV3 3.1.2 documentation" href="index.html" />
+    <link rel="next" title="Lisp library (bbdb-wl)" href="bbdb-wl.html" />
+    <link rel="prev" title="Lisp library (bbdb-snarf)" href="bbdb-snarf.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="lisp-library-bbdb-vm">
+<h1>Lisp library (bbdb-vm)<a class="headerlink" href="#lisp-library-bbdb-vm" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="el.function.vm-summary-function-B">
+<em class="property">Function </em><code class="descname">vm-summary-function-B</code> m<a class="headerlink" href="#el.function.vm-summary-function-B" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">For VM message M return the BBDB name of the sender.
+Respect <code class="docutils literal"><span class="pre">`vm-summary-uninteresting-senders'</span></code>.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb/vm-auto-folder">
+<em class="property">Function </em><code class="descname">bbdb/vm-auto-folder</code> <a class="headerlink" href="#el.function.bbdb/vm-auto-folder" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Add entries to <code class="docutils literal"><span class="pre">`vm-auto-folder-alist'</span></code> for the records in BBDB.
+For each record that has a <code class="docutils literal"><span class="pre">`vm-folder'</span></code> xfield, add an element
+\(MAIL-REGEXP . FOLDER-NAME) to <code class="docutils literal"><span class="pre">`vm-auto-folder-alist'</span></code>.
+The element gets added to the sublists of <code class="docutils literal"><span class="pre">`vm-auto-folder-alist'</span></code>
+specified in <a class="reference internal" href="#el.variable.bbdb/vm-auto-folder-headers" title="bbdb/vm-auto-folder-headers"><code class="docutils literal"><span class="pre">`bbdb/vm-auto-folder-headers'</span></code></a>.
+MAIL-REGEXP matches the mail addresses of the BBDB record.
+The value of the <code class="docutils literal"><span class="pre">`vm-folder'</span></code> xfield becomes FOLDER-NAME.
+The <code class="docutils literal"><span class="pre">`vm-folder'</span></code> xfield is defined via <a class="reference internal" href="#el.variable.bbdb/vm-auto-folder-field" title="bbdb/vm-auto-folder-field"><code class="docutils literal"><span class="pre">`bbdb/vm-auto-folder-field'</span></code></a>.
+
+Add this function to <a class="reference internal" href="bbdb.html#el.variable.bbdb-before-save-hook" title="bbdb-before-save-hook"><code class="docutils literal"><span class="pre">`bbdb-before-save-hook'</span></code></a> and your .vm.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb/vm-virtual-folder">
+<em class="property">Function </em><code class="descname">bbdb/vm-virtual-folder</code> <a class="headerlink" href="#el.function.bbdb/vm-virtual-folder" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Create <code class="docutils literal"><span class="pre">`vm-virtual-folder-alist'</span></code> according to the records in BBDB.
+For each record that has a <code class="docutils literal"><span class="pre">`vm-virtual'</span></code> xfield, add or modify the
+corresponding VIRTUAL-FOLDER-NAME element of <code class="docutils literal"><span class="pre">`vm-virtual-folder-alist'</span></code>.
+
+  (VIRTUAL-FOLDER-NAME ((FOLDER-NAME ...)
+                        (author-or-recipient MAIL-REGEXP)))
+
+VIRTUAL-FOLDER-NAME is the first element of the <code class="docutils literal"><span class="pre">`vm-virtual'</span></code> xfield.
+FOLDER-NAME ... are either the remaining elements of the <code class="docutils literal"><span class="pre">`vm-virtual'</span></code> xfield,
+or <a class="reference internal" href="#el.variable.bbdb/vm-virtual-real-folders" title="bbdb/vm-virtual-real-folders"><code class="docutils literal"><span class="pre">`bbdb/vm-virtual-real-folders'</span></code></a> or <code class="docutils literal"><span class="pre">`vm-primary-inbox'</span></code>.
+MAIL-REGEXP matches the mail addresses of the BBDB record.
+The <code class="docutils literal"><span class="pre">`vm-virtual'</span></code> xfield is defined via <a class="reference internal" href="#el.variable.bbdb/vm-virtual-folder-field" title="bbdb/vm-virtual-folder-field"><code class="docutils literal"><span class="pre">`bbdb/vm-virtual-folder-field'</span></code></a>.
+
+Add this function to <a class="reference internal" href="bbdb.html#el.variable.bbdb-before-save-hook" title="bbdb-before-save-hook"><code class="docutils literal"><span class="pre">`bbdb-before-save-hook'</span></code></a> and your .vm.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb/vm-auto-add-label">
+<em class="property">Function </em><code class="descname">bbdb/vm-auto-add-label</code> record<a class="headerlink" href="#el.function.bbdb/vm-auto-add-label" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Automatically add labels to VM messages.
+Add this to <a class="reference internal" href="bbdb.html#el.variable.bbdb-notice-record-hook" title="bbdb-notice-record-hook"><code class="docutils literal"><span class="pre">`bbdb-notice-record-hook'</span></code></a> to check the messages noticed by BBDB.
+If the value of <a class="reference internal" href="#el.variable.bbdb/vm-auto-add-label-field" title="bbdb/vm-auto-add-label-field"><code class="docutils literal"><span class="pre">`bbdb/vm-auto-add-label-field'</span></code></a> in the sender's BBDB record
+matches a value in <a class="reference internal" href="#el.variable.bbdb/vm-auto-add-label-list" title="bbdb/vm-auto-add-label-list"><code class="docutils literal"><span class="pre">`bbdb/vm-auto-add-label-list'</span></code></a> then a VM label will be added
+to the message.  Such VM labels can be used, e.g., to mark messages via
+<code class="docutils literal"><span class="pre">`vm-mark-matching-messages'</span></code> or to define virtual folders via
+<code class="docutils literal"><span class="pre">`vm-create-virtual-folder'</span></code>
+
+Typically <a class="reference internal" href="#el.variable.bbdb/vm-auto-add-label-field" title="bbdb/vm-auto-add-label-field"><code class="docutils literal"><span class="pre">`bbdb/vm-auto-add-label-field'</span></code></a> and <a class="reference internal" href="#el.variable.bbdb/vm-auto-add-label-list" title="bbdb/vm-auto-add-label-list"><code class="docutils literal"><span class="pre">`bbdb/vm-auto-add-label-list'</span></code></a>
+refer to mail aliases FOO used with multiple records.  This adds a label FOO
+to all incoming messages matching FOO.  Then VM can create a virtual folder
+for these messages.  The concept of combining multiple recipients of an
+outgoing message in one mail alias thus gets extended to incoming messages
+from different senders.</pre>
+</dd></dl>
+
+<dl class="function">
+<dt id="el.function.bbdb-insinuate-vm">
+<em class="property">Function </em><code class="descname">bbdb-insinuate-vm</code> <a class="headerlink" href="#el.function.bbdb-insinuate-vm" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Hook BBDB into VM.
+Do not call this in your init file.  Use <a class="reference internal" href="bbdb.html#el.function.bbdb-initialize" title="bbdb-initialize"><code class="docutils literal"><span class="pre">`bbdb-initialize'</span></code></a>.</pre>
+</dd></dl>
+
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<dl class="variable">
+<dt id="el.variable.bbdb/vm-auto-folder-headers">
+<em class="property">Variable </em><code class="descname">bbdb/vm-auto-folder-headers</code><a class="headerlink" href="#el.variable.bbdb/vm-auto-folder-headers" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">The headers used by <a class="reference internal" href="#el.function.bbdb/vm-auto-folder" title="bbdb/vm-auto-folder"><code class="docutils literal"><span class="pre">`bbdb/vm-auto-folder'</span></code></a>.
+The order in this list is the order how matching will be performed.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb/vm-auto-folder-field">
+<em class="property">Variable </em><code class="descname">bbdb/vm-auto-folder-field</code><a class="headerlink" href="#el.variable.bbdb/vm-auto-folder-field" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">The xfield which <a class="reference internal" href="#el.function.bbdb/vm-auto-folder" title="bbdb/vm-auto-folder"><code class="docutils literal"><span class="pre">`bbdb/vm-auto-folder'</span></code></a> searches for.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb/vm-virtual-folder-field">
+<em class="property">Variable </em><code class="descname">bbdb/vm-virtual-folder-field</code><a class="headerlink" href="#el.variable.bbdb/vm-virtual-folder-field" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">The xfield which <a class="reference internal" href="#el.function.bbdb/vm-virtual-folder" title="bbdb/vm-virtual-folder"><code class="docutils literal"><span class="pre">`bbdb/vm-virtual-folder'</span></code></a> searches for.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb/vm-virtual-real-folders">
+<em class="property">Variable </em><code class="descname">bbdb/vm-virtual-real-folders</code><a class="headerlink" href="#el.variable.bbdb/vm-virtual-real-folders" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Real folders used for defining virtual folders.
+If nil use <code class="docutils literal"><span class="pre">`vm-primary-inbox'</span></code>.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb/vm-auto-add-label-list">
+<em class="property">Variable </em><code class="descname">bbdb/vm-auto-add-label-list</code><a class="headerlink" href="#el.variable.bbdb/vm-auto-add-label-list" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">List used by <a class="reference internal" href="#el.function.bbdb/vm-auto-add-label" title="bbdb/vm-auto-add-label"><code class="docutils literal"><span class="pre">`bbdb/vm-auto-add-label'</span></code></a> to automatically label VM messages.
+Its elements may be strings used both as the xfield value to check for
+and as the label to apply to the message.
+If an element is a cons pair (VALUE . LABEL), VALUE is the xfield value
+to search for and LABEL is the label to apply.</pre>
+</dd></dl>
+
+<dl class="variable">
+<dt id="el.variable.bbdb/vm-auto-add-label-field">
+<em class="property">Variable </em><code class="descname">bbdb/vm-auto-add-label-field</code><a class="headerlink" href="#el.variable.bbdb/vm-auto-add-label-field" title="Permalink to this definition">¶</a></dt>
+<dd><pre class="el-docstring-block">Xfields used by <a class="reference internal" href="#el.function.bbdb/vm-auto-add-label" title="bbdb/vm-auto-add-label"><code class="docutils literal"><span class="pre">`bbdb/vm-auto-add-label'</span></code></a> to automatically label messages.
+This is either a single BBDB xfield or a list of xfields that
+<a class="reference internal" href="#el.function.bbdb/vm-auto-add-label" title="bbdb/vm-auto-add-label"><code class="docutils literal"><span class="pre">`bbdb/vm-auto-add-label'</span></code></a> uses to check for labels to apply to a message.
+Defaults to <a class="reference internal" href="bbdb.html#el.variable.bbdb-mail-alias-field" title="bbdb-mail-alias-field"><code class="docutils literal"><span class="pre">`bbdb-mail-alias-field'</span></code></a> which defaults to <code class="docutils literal"><span class="pre">`mail-alias'</span></code>.</pre>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Lisp library (bbdb-vm)</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="bbdb-snarf.html" title="previous chapter">Lisp library (bbdb-snarf)</a></li>
+      <li>Next: <a href="bbdb-wl.html" title="next chapter">Lisp library (bbdb-wl)</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/bbdb-vm.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Andy Cowling.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/bbdb-vm.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
