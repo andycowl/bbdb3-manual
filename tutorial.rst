@@ -44,8 +44,8 @@ set of 2 from a grand total of 2.
 The entries are initially sorted by 'Name' order so 'David Evans'
 appears first despite being added last.
 
-Navigation uses the familiar 'n' (`bbdb-next-record`) and 'p'
-(`bbdb-prev-record`) key bindings.
+Navigation uses the familiar 'n' (:el:`bbdb-next-record`) and 'p'
+(:el:`bbdb-prev-record`) key bindings.
 
 You can also search BBDB using 'b' (`bbdb`) which searches across all
 fields. For example, searching for 'evans' displays a single record
