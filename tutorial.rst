@@ -9,7 +9,6 @@ The best way to demonstrate the features in BBDB is to actually
 illustrate some standard tasks. If you are already an experienced BBDB
 user, you may wish to skip this section.
 
------------------
 Creating an entry
 -----------------
 
@@ -28,7 +27,6 @@ Add another entry for 'David Evans' in the same manner.
 Now we have two entries, we can navigate and search our embryonic
 BBDB.
 
----------
 Searching
 ---------
 
@@ -46,30 +44,30 @@ set of 2 from a grand total of 2.
 The entries are initially sorted by 'Name' order so 'David Evans'
 appears first despite being added last.
 
-Navigation uses the familiar 'n' (bbdb-next-record) and 'p'
-(bbdb-prev-record) key bindings.
+Navigation uses the familiar 'n' (`bbdb-next-record`) and 'p'
+(`bbdb-prev-record`) key bindings.
 
-You can also search BBDB using 'b' ('bbdb') which searches across all
+You can also search BBDB using 'b' (`bbdb`) which searches across all
 fields. For example, searching for 'evans' displays a single record
 ('David Evans'). The search is case insensitive.
 
---------
 Updating
 --------
 
 Occasionally, you may want to change contact details.  Search BBDB
 (using 'b') to find the contact named 'David Evans'.
 
-Type 'e' ('bbdb-edit-field') to change this contact's first name to 'Dave'.
+Type 'e' (`bbdb-edit-field`) to change this contact's first name to
+'Dave'.
 
-Save your changes using 's' (bbdb-save). Your changes are now saved to
-the BBDB which resides in '~/.emacs.d/bbdb' ('bbdb-file') by default.
+Save your changes using 's' (`bbdb-save`). Your changes are now saved
+to the BBDB which resides in '~/.emacs.d/bbdb' (`bbdb-file`) by
+default.
 
--------------
 Adding fields
 -------------
 
-Add a new contact called 'Adam Clayton' using 'c' ('bbdb-create'). This
+Add a new contact called 'Adam Clayton' using 'c' (`bbdb-create`). This
 time, include additional information for the organization, address,
 phone number and email address as follows::
 
@@ -88,8 +86,8 @@ phone number and email address as follows::
 Now we have a record populated with five fields in addition to
 'Name'. The newly created record is displayed.
 
-You can use 't' ('toggle-layout') to view a brief one line summary and
-'T' ('show-all-fields') to expose all fields of the contact. The
+You can use 't' (`toggle-layout`) to view a brief one line summary and
+'T' (`show-all-fields`) to expose all fields of the contact. The
 expanded view includes two standard audit timestamp fields that are
 automatically created and maintained by BBDB; 'creation-date' and
 'timestamp'
@@ -100,14 +98,13 @@ subsequent update is made to the record. The timestamps can be
 valuable in purging historic, outdated data and examining recent
 records.
 
-Use 'TAB' ('bbdb-next-field') to navigate to the next field and
-'BACKSPACE' ('bbdb-prev-field') to go back to the previous field.
+Use 'TAB' (`bbdb-next-field`) to navigate to the next field and
+'BACKSPACE' (`bbdb-prev-field`) to go back to the previous field.
 
 If you made any errors during the creation of the contact, you can
-navigate to the field and then use 'e' ('bbdb-edit-field') to edit and
+navigate to the field and then use 'e' (`bbdb-edit-field`) to edit and
 correct the field.
 
--------------------
 Searching on fields
 -------------------
 
@@ -150,14 +147,13 @@ The full list of field searches is
 | '!'         | Invert        |
 +-------------+---------------+
 
-----------
 Duplicates
 ----------
 
 BBDB offers help in managing a contact database. A common problem is
 that of duplicate entries; a person who has different aliases ('Dave',
-'David') or multiple email addresses (e.g. home, work) or
-historic, outdated fields.
+'David') or multiple email addresses (e.g. home, work) or historic,
+outdated fields.
 
 Add a new entry for 'Larry Mullen' with an email address of
 'larry.mullen@islandrecords.com'.
@@ -165,7 +161,7 @@ Add a new entry for 'Larry Mullen' with an email address of
 Add another entry for 'Larry Mullen Jnr' with the same email address
 of 'larry.mullen@islandrecords.com'.
 
-Display all entries using 'b' and use '/ d' ('bbdb-search-duplicates')
+Display all entries using 'b' and use '/ d' (`bbdb-search-duplicates`)
 to search for duplicate entries.
 
 The two similar entries for 'Larry Mullen' should be displayed.
@@ -187,7 +183,6 @@ followed by::
 The single, resulting merged record is now displayed. 'Larry Mullen'
 is now is an 'AKA' field for the 'Larry Mullen Jnr' record.
 
----------------
 Extended Fields
 ---------------
 
@@ -196,7 +191,7 @@ define additional fields for contacts. The predefined 'notes' field in
 BBDB2 is simply an example of an extended field in BBDB3.
 
 You can add a note field to an existing contact using ';'
-('edit-some-field').
+(`edit-some-field`).
 
 As no contacts were initially created with a 'note' field, BBDB
 prompts::
@@ -206,20 +201,19 @@ prompts::
 In addition to the 'notes' field, you can extend BBDB with additional
 user defined fields.
 
-Use 'i' (bbdb-insert-field) to add a new field called 'Instrument' and
-set this field to 'Guitar' for Dave Evans.
+Use 'i' (`bbdb-insert-field`) to add a new field called 'Instrument'
+and set this field to 'Guitar' for Dave Evans.
 
 Of course, the U2 guitarist is more commonly known as 'The Edge' so
 navigate to the AKA ('Also Known As') field and add 'The Edge' as an
 alias for 'David Evans'.
 
--------------
 Sending email
 -------------
 
 BBDB allows sending email to a single contact or a set of contacts.
 
-Search and navigate to a specfic contact and type 'm' ('bbdb-mail')
+Search and navigate to a specfic contact and type 'm' (`bbdb-mail`)
 which composes an email to the current contact.
 
 If a set of contacts has been created, type '* m' to send an email to
@@ -229,7 +223,6 @@ You can use this feature to manage simple mail groups; if you tag a
 group of contacts with 'curry', you can use '* m' to invite your
 friends for the traditional Thursday night meal.
 
------------------
 Omitting an entry
 -----------------
 
@@ -237,17 +230,16 @@ If you have selected a list of contacts, it is possible to omit a
 contact (or multiple contacts) from the list of recipients while
 preserving the entry in BBDB.
 
-You use 'o' ('omit-record') which hides the entry and type '* m' to
+You use 'o' (`omit-record`) which hides the entry and type '* m' to
 compose an email to the reduced list of contacts.
 
-----------------
 Deleting a field
 ----------------
 
 You can delete the contents of a field by navigating to the field of
 the contact (use 'n' and 'p' to navigate between contacts and 'TAB'
 and 'DEL' between fields). Once positioned on the correct field, use
-'d' or 'C-k' (which are both bound to 'bbdb-delete-field-or-record').
+'d' or 'C-k' (which are both bound to `bbdb-delete-field-or-record`).
 
 BBDB will prompt::
 
@@ -273,7 +265,7 @@ Birthdays and anniversaries
 ---------------------------
 
 To use birthday and anniversaries in BBDB, you must ensure 'anniv is
-included in the list of parameters when calling 'bbdb-initialize' in
+included in the list of parameters when calling `bbdb-initialize` in
 'init.el'::
 
   (bbdb-initialize 'gnus 'message 'anniv)
@@ -286,7 +278,7 @@ calendar, add the following line to 'init.el'::
 Birthdays are implemented as another extended field named 'birthday'.
 
 Find the contact called 'Adam Clayton' and add a new extended field
-called 'birthday' using 'i' ('bbdb-insert-field')
+called 'birthday' using 'i' (`bbdb-insert-field`).
 
 The default date format setting is 'American' ('mm/dd/yyyy') so, to
 add Adam Clayton's birthday which is '13 March 1960', enter::
@@ -304,14 +296,13 @@ Check the birthday has been added to the Emacs calendar::
 
   M-x calendar
 
-Navigate to 13 March and type 'd' (diary-view-entries'). The birthday
+Navigate to 13 March and type 'd' (`diary-view-entries`). The birthday
 should be displayed as follows::
 
   Sunday, March 13, 2016
   ======================
   Adam Clayton's 56th birthday
 
-------------
 Housekeeping
 ------------
 
@@ -331,17 +322,16 @@ For example, to list all records created before 2014, use
 
 Enter '2014-01-01' to displayed all contacts created prior to 2014.
 
-There is a complementary function 'bbdb-creation-newer-than' to identify
-recently created records.
+There is a complementary function `bbdb-creation-newer-than` to
+identify recently created records.
 
 Similarly, using the 'timestamp' field can identify records modified
-in the last month ('bbdb-timestamp-newer').
+in the last month (`bbdb-timestamp-newer`).
 
 Another useful function to assist in identifying records that have
 been created and never subsequently updated is
-'bbdb-creation-no-change'.
+`bbdb-creation-no-change`.
 
---------
 Snarfing
 --------
 
@@ -366,19 +356,17 @@ results::
          Atlanta
          GA
 
---------
 Printing
 --------
 
-'bbdb-print' produces a TeX file for the current set of contacts and
+`bbdb-print` produces a TeX file for the current set of contacts and
 uses bbdb-print-tex-path (typically /path/to/bbdb/tex) to locate the
 TeX templates.
 
 BBDB then creates a TeX file which must be processed using TeX (not
 LaTeX) to produce a PDF ready for printing.
 
--------
 Dialing
 -------
 
-'bbdb-dial' dials the number under point.
+`bbdb-dial` dials the number under point.
