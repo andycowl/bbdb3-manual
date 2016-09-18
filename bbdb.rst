@@ -3,6 +3,11 @@ Lisp library (bbdb)
 
 .. el:require:: bbdb
 
+Keymap
+------
+
+.. el:keymap:: bbdb-mode-map
+
 Functions
 ---------
 
