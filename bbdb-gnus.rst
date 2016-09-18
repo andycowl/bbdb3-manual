@@ -15,10 +15,10 @@ Functions
 .. el:function:: bbdb/gnus-score
    :auto:
 
-.. el:function:: bbdb/gnus-score-invalidate-alist
+.. el:function:: bbdb/gnus-score-as-text
    :auto:
 
-.. el:function:: bbdb/gnus-score-as-text
+.. el:function:: bbdb/gnus-score-invalidate-alist
    :auto:
 
 .. el:function:: bbdb/gnus-split-method
@@ -30,28 +30,28 @@ Functions
 Variables
 ---------
 
-.. el:variable:: bbdb/gnus-score-field
+.. el:variable:: bbdb/gnus-score-alist
    :auto:
 
 .. el:variable:: bbdb/gnus-score-default
    :auto:
 
+.. el:variable:: bbdb/gnus-split-default-group
+   :auto:
+
 .. el:variable:: bbdb/gnus-score-default-internal
    :auto:
 
-.. el:variable:: bbdb/gnus-score-alist
+.. el:variable:: bbdb/gnus-score-field
    :auto:
 
 .. el:variable:: bbdb/gnus-score-rebuild-alist
    :auto:
 
-.. el:variable:: bbdb/gnus-split-default-group
+.. el:variable:: bbdb/gnus-split-crosspost-default
    :auto:
 
 .. el:variable:: bbdb/gnus-split-myaddr-regexp
-   :auto:
-
-.. el:variable:: bbdb/gnus-split-crosspost-default
    :auto:
 
 .. el:variable:: bbdb/gnus-split-nomatch-function

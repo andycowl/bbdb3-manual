@@ -15,16 +15,7 @@ Functions
 .. el:function:: bbdb-migrate
    :auto:
 
-.. el:function:: bbdb-migrate-record-lambda
-   :auto:
-
-.. el:function:: bbdb-migrate-versions-lambda
-   :auto:
-
-.. el:function:: bbdb-migrate-versions-lambda
-   :auto:
-
-.. el:function:: bbdb-migrate-postcodes-to-strings
+.. el:function:: bbdb-migrate-add-country-field
    :auto:
 
 .. el:function:: bbdb-migrate-change-dates
@@ -33,16 +24,22 @@ Functions
 .. el:function:: bbdb-migrate-change-dates-change-field
    :auto:
 
-.. el:function:: bbdb-migrate-add-country-field
+.. el:function:: bbdb-migrate-organization-to-list
+   :auto:
+
+.. el:function:: bbdb-migrate-postcodes-to-strings
+   :auto:
+
+.. el:function:: bbdb-migrate-record-lambda
    :auto:
 
 .. el:function:: bbdb-migrate-streets-to-list
    :auto:
 
-.. el:function:: bbdb-migrate-xfields-to-list
+.. el:function:: bbdb-migrate-versions-lambda
    :auto:
 
-.. el:function:: bbdb-migrate-organization-to-list
+.. el:function:: bbdb-migrate-xfields-to-list
    :auto:
 
 .. el:function:: bbdb-undocumented-variables

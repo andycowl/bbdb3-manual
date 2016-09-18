@@ -20,10 +20,7 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('_source'))
 
-# Emacs is primary domain
-primary_domain = 'el'
-
-# Emacs Lisp (.el) files are in current directory.
+# Emacs Lisp (.el) files are in '_source' sub-directory.
 emacs_lisp_load_path = [
     os.path.abspath('_source')
 ]
@@ -112,6 +109,9 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # output. They are ignored by default.
 #
 # show_authors = False
+
+# Emacs is primary domain
+primary_domain = 'el'
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'

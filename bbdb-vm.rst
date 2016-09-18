@@ -6,7 +6,7 @@ Lisp library (bbdb-vm)
 Functions
 ---------
 
-.. el:function:: vm-summary-function-B
+.. el:function:: bbdb-insinuate-vm
    :auto:
 
 .. el:function:: bbdb/vm-auto-folder
@@ -18,11 +18,18 @@ Functions
 .. el:function:: bbdb/vm-auto-add-label
    :auto:
 
-.. el:function:: bbdb-insinuate-vm
+.. el:function:: vm-summary-function-B
    :auto:
+
 
 Variables
 ---------
+
+.. el:variable:: bbdb/vm-auto-add-label-field
+   :auto:
+
+.. el:variable:: bbdb/vm-auto-add-label-list
+   :auto:
 
 .. el:variable:: bbdb/vm-auto-folder-headers
    :auto:
@@ -34,10 +41,4 @@ Variables
    :auto:
 
 .. el:variable:: bbdb/vm-virtual-real-folders
-   :auto:
-
-.. el:variable:: bbdb/vm-auto-add-label-list
-   :auto:
-
-.. el:variable:: bbdb/vm-auto-add-label-field
    :auto:

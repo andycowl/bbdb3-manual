@@ -6,11 +6,11 @@ Lisp library (bbdb-rmail)
 Functions
 ---------
 
-.. el:function:: bbdb/rmail-new-flag
+.. el:function:: bbdb-insinuate-rmail
    :auto:
 
 .. el:function:: bbdb/rmail-header
    :auto:
 
-.. el:function:: bbdb-insinuate-rmail
+.. el:function:: bbdb/rmail-new-flag
    :auto:

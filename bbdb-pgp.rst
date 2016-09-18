@@ -22,9 +22,6 @@ Variables
 .. el:variable:: bbdb-pgp-field
    :auto:
 
-.. el:variable:: bbdb-pgp-ranked-actions
-   :auto:
-
 .. el:variable:: bbdb-pgp-headers
    :auto:
 
@@ -32,4 +29,7 @@ Variables
    :auto:
 
 .. el:variable:: bbdb-pgp-method-alist
+   :auto:
+
+.. el:variable:: bbdb-pgp-ranked-actions
    :auto:

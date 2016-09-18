@@ -21,10 +21,10 @@ Variables
 .. el:variable:: bbdb-ispell-field-list
    :auto:
 
-.. el:variable:: bbdb-ispell-min-word-length
+.. el:variable:: bbdb-ispell-ignore-re
    :auto:
 
-.. el:variable:: bbdb-ispell-ignore-re
+.. el:variable:: bbdb-ispell-min-word-length
    :auto:
 
 .. el:variable:: bbdb-ispell-word-list

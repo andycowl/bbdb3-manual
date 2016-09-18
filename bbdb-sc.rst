@@ -6,9 +6,6 @@ Lisp library (bbdb-sc)
 Functions
 ---------
 
-.. el:function:: bbdb-sc-update-from
-   :auto:
-
 .. el:function:: bbdb-insinuate-sc
    :auto:
 
@@ -18,6 +15,8 @@ Functions
 .. el:function:: bbdb-sc-set-attrib
    :auto:
 
+.. el:function:: bbdb-sc-update-from
+   :auto:
 
 
 Variables
@@ -26,14 +25,11 @@ Variables
 .. el:variable:: bbdb-sc-attribution-field
    :auto:
 
-.. el:variable:: bbdb-sc-update-records-p
-   :auto:
-
-.. el:variable:: bbdb-sc-update-attrib-p
-   :auto:
-
-.. el:variable:: bbdb-sc-update-attrib-p
-   :auto:
-
 .. el:variable:: bbdb-sc-last-attrib
+   :auto:
+
+.. el:variable:: bbdb-sc-update-attrib-p
+   :auto:
+
+.. el:variable:: bbdb-sc-update-records-p
    :auto:

@@ -18,10 +18,25 @@ Functions
 .. el:function:: bbdb-annotate-message
    :auto:
 
-.. el:function:: bbdb-mua-annotate-field-interactive
+.. el:function:: bbdb-annotate-record
    :auto:
 
-.. el:function:: bbdb-annotate-record
+.. el:function:: bbdb-auto-notes
+   :auto:
+
+.. el:function:: bbdb-get-address-components
+   :auto:
+
+.. el:function:: bbdb-ignore-message
+   :auto:
+
+.. el:function:: bbdb-message-header
+   :auto:
+
+.. el:function:: bbdb-mua
+   :auto:
+
+.. el:function:: bbdb-mua-annotate-field-interactive
    :auto:
 
 .. el:function:: bbdb-mua-annotate-recipients
@@ -42,22 +57,7 @@ Functions
 .. el:function:: bbdb-mua-edit-field-sender
    :auto:
 
-.. el:function:: bbdb-get-address-components
-   :auto:
-
-.. el:function:: bbdb-ignore-message
-   :auto:
-
-.. el:function:: bbdb-message-header
-   :auto:
-
-.. el:function:: bbdb-mua
-   :auto:
-
 .. el:function:: bbdb-mua-auto-update
-   :auto:
-
-.. el:function:: bbdb-auto-notes
    :auto:
 
 .. el:function:: bbdb-mua-auto-update-init

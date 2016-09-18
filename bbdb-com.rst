@@ -6,9 +6,29 @@ Lisp library (bbdb-com)
 Commands
 --------
 
+.. el:command:: bbdb
+   :binding: b
+   :auto:
+
+.. el:command:: bbdb-create
+   :binding: c
+   :auto:
+
+.. el:command:: bbdb-display-records-completely
+   :binding: T
+   :auto:
+
 .. el:command:: bbdb-do-all-records
    :auto:
    :binding: *
+
+.. el:command:: bbdb-omit-record
+   :binding: o
+   :auto:
+
+.. el:command:: bbdb-toggle-records-layout
+   :binding: t
+   :auto:
 
 Functions
 ---------
@@ -52,9 +72,6 @@ Functions
 .. el:function:: bbdb-copy-records-as-kill
    :auto:
 
-.. el:function:: bbdb-create
-   :auto:
-
 .. el:function:: bbdb-creation-newer
    :auto:
 
@@ -83,9 +100,6 @@ Functions
    :auto:
 
 .. el:function:: bbdb-display-current-record
-   :auto:
-
-.. el:function:: bbdb-display-records-completely
    :auto:
 
 .. el:function:: bbdb-display-records-with-layout
@@ -148,9 +162,6 @@ Functions
 .. el:function:: bbdb-message-search
    :auto:
 
-.. el:function:: bbdb-omit-record
-   :auto:
-
 .. el:function:: bbdb-parse-phone
    :auto:
 
@@ -176,9 +187,6 @@ Functions
    :auto:
 
 .. el:function:: bbdb-record-list
-   :auto:
-
-.. el:function:: bbdb
    :auto:
 
 .. el:function:: bbdb-search-address
@@ -230,9 +238,6 @@ Functions
    :auto:
 
 .. el:function:: bbdb-timestamp-older
-   :auto:
-
-.. el:function:: bbdb-toggle-records-layout
    :auto:
 
 .. el:function:: bbdb-touch-records

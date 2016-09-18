@@ -6,8 +6,8 @@ Lisp library (bbdb-mhe)
 Functions
 ---------
 
-.. el:function:: bbdb/mh-header
+.. el:function:: bbdb-insinuate-mh
    :auto:
 
-.. el:function:: bbdb-insinuate-mh
+.. el:function:: bbdb/mh-header
    :auto:

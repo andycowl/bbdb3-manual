@@ -12,7 +12,8 @@ user, you may wish to skip this section.
 Creating an entry
 -----------------
 
-The first task to to add a contact to our BBDB::
+The first task to to add a contact to our BBDB using
+:command:`bbdb-create`. Type::
 
   M-x bbdb-create
 
@@ -30,7 +31,7 @@ BBDB.
 Searching
 ---------
 
-To examine the contents of BBDB, use::
+To examine the contents of BBDB, :command:`bbdb`. Type::
 
   M-x bbdb
 
@@ -44,12 +45,13 @@ set of 2 from a grand total of 2.
 The entries are initially sorted by 'Name' order so 'David Evans'
 appears first despite being added last.
 
-Navigation uses the familiar 'n' (`bbdb-next-record`) and 'p'
-(`bbdb-prev-record`) key bindings.
+Navigation uses the familiar 'n' (:function:`bbdb-next-record`)
+and 'p' (:function:`bbdb-prev-record`) key bindings.
 
-You can also search BBDB using 'b' (`bbdb`) which searches across all
-fields. For example, searching for 'evans' displays a single record
-('David Evans'). The search is case insensitive.
+You can also search BBDB using 'b' (:function:`bbdb`) which searches
+across all fields. For example, searching for 'evans' displays a
+single record ('David Evans'). The search is case insensitive.
+
 
 Updating
 --------
@@ -57,19 +59,20 @@ Updating
 Occasionally, you may want to change contact details.  Search BBDB
 (using 'b') to find the contact named 'David Evans'.
 
-Type 'e' (`bbdb-edit-field`) to change this contact's first name to
+Type 'e' (:function:`bbdb-edit-field`) to change this contact's first name to
 'Dave'.
 
-Save your changes using 's' (`bbdb-save`). Your changes are now saved
-to the BBDB which resides in '~/.emacs.d/bbdb' (`bbdb-file`) by
-default.
+Save your changes using 's' (:function:`bbdb-save`). Your changes are
+now saved to the BBDB which resides in '~/.emacs.d/bbdb'
+(:variable:`bbdb-file`) by default.
 
 Adding fields
 -------------
 
-Add a new contact called 'Adam Clayton' using 'c' (`bbdb-create`). This
-time, include additional information for the organization, address,
-phone number and email address as follows::
+Add a new contact called 'Adam Clayton' using 'c'
+(:function:`bbdb-create`). This time, include additional information
+for the organization, address, phone number and email address as
+follows::
 
   For 'Organizations' enter, 'Island Records'
   For email, enter 'adam.clayton@island.com'
@@ -86,11 +89,12 @@ phone number and email address as follows::
 Now we have a record populated with five fields in addition to
 'Name'. The newly created record is displayed.
 
-You can use 't' (`toggle-layout`) to view a brief one line summary and
-'T' (`show-all-fields`) to expose all fields of the contact. The
-expanded view includes two standard audit timestamp fields that are
-automatically created and maintained by BBDB; 'creation-date' and
-'timestamp'
+You can use 't' (:command:`bbdb-toggle-records-layout`) to view a
+brief one line summary and 'T'
+(:command:`bbdb-display-records-completely`) to expose all fields of
+the contact. The expanded view includes two standard audit timestamp
+fields that are automatically created and maintained by BBDB;
+'creation-date' and 'timestamp'
 
 For a newly created record, both timestamp fields will be identical
 but the 'timestamp' field will automatically track whenever a
@@ -98,12 +102,13 @@ subsequent update is made to the record. The timestamps can be
 valuable in purging historic, outdated data and examining recent
 records.
 
-Use 'TAB' (`bbdb-next-field`) to navigate to the next field and
-'BACKSPACE' (`bbdb-prev-field`) to go back to the previous field.
+Use 'TAB' (:function:`bbdb-next-field`) to navigate to the next field
+and 'BACKSPACE' (:function:`bbdb-prev-field`) to go back to the
+previous field.
 
 If you made any errors during the creation of the contact, you can
-navigate to the field and then use 'e' (`bbdb-edit-field`) to edit and
-correct the field.
+navigate to the field and then use 'e' (:function:`bbdb-edit-field`)
+to edit and correct the field.
 
 Searching on fields
 -------------------
@@ -161,8 +166,8 @@ Add a new entry for 'Larry Mullen' with an email address of
 Add another entry for 'Larry Mullen Jnr' with the same email address
 of 'larry.mullen@islandrecords.com'.
 
-Display all entries using 'b' and use '/ d' (`bbdb-search-duplicates`)
-to search for duplicate entries.
+Display all entries using 'b' and use '/ d'
+(:function:`bbdb-search-duplicates`) to search for duplicate entries.
 
 The two similar entries for 'Larry Mullen' should be displayed.
 
@@ -191,7 +196,7 @@ define additional fields for contacts. The predefined 'notes' field in
 BBDB2 is simply an example of an extended field in BBDB3.
 
 You can add a note field to an existing contact using ';'
-(`edit-some-field`).
+(:function:`edit-some-field`).
 
 As no contacts were initially created with a 'note' field, BBDB
 prompts::
@@ -201,7 +206,7 @@ prompts::
 In addition to the 'notes' field, you can extend BBDB with additional
 user defined fields.
 
-Use 'i' (`bbdb-insert-field`) to add a new field called 'Instrument'
+Use 'i' (:function:`bbdb-insert-field`) to add a new field called 'Instrument'
 and set this field to 'Guitar' for Dave Evans.
 
 Of course, the U2 guitarist is more commonly known as 'The Edge' so
@@ -213,8 +218,9 @@ Sending email
 
 BBDB allows sending email to a single contact or a set of contacts.
 
-Search and navigate to a specfic contact and type 'm' (`bbdb-mail`)
-which composes an email to the current contact.
+Search and navigate to a specfic contact and type 'm'
+(:function:`bbdb-mail`) which composes an email to the current
+contact.
 
 If a set of contacts has been created, type '* m' to send an email to
 all contacts in the list.
@@ -230,8 +236,8 @@ If you have selected a list of contacts, it is possible to omit a
 contact (or multiple contacts) from the list of recipients while
 preserving the entry in BBDB.
 
-You use 'o' (`omit-record`) which hides the entry and type '* m' to
-compose an email to the reduced list of contacts.
+You use 'o' (:command:`bbdb-omit-record`) which hides the entry and
+type '* m' to compose an email to the reduced list of contacts.
 
 Deleting a field
 ----------------
@@ -239,13 +245,13 @@ Deleting a field
 You can delete the contents of a field by navigating to the field of
 the contact (use 'n' and 'p' to navigate between contacts and 'TAB'
 and 'DEL' between fields). Once positioned on the correct field, use
-'d' or 'C-k' (which are both bound to `bbdb-delete-field-or-record`).
+'d' or 'C-k' (which are both bound to
+:function:`bbdb-delete-field-or-record`).
 
 BBDB will prompt::
 
   delete this 'mail' field (of Michael Stipe)? (y or n).
 
------------------
 Deleting an entry
 -----------------
 
@@ -260,7 +266,6 @@ Deletions of multiple records is possible in the normal way; selecting
 the desired data set and use C-k. A prompt will be issued for each
 record.
 
----------------------------
 Birthdays and anniversaries
 ---------------------------
 
@@ -278,7 +283,7 @@ calendar, add the following line to 'init.el'::
 Birthdays are implemented as another extended field named 'birthday'.
 
 Find the contact called 'Adam Clayton' and add a new extended field
-called 'birthday' using 'i' (`bbdb-insert-field`).
+called 'birthday' using 'i' (:function:`bbdb-insert-field`).
 
 The default date format setting is 'American' ('mm/dd/yyyy') so, to
 add Adam Clayton's birthday which is '13 March 1960', enter::
@@ -296,8 +301,9 @@ Check the birthday has been added to the Emacs calendar::
 
   M-x calendar
 
-Navigate to 13 March and type 'd' (`diary-view-entries`). The birthday
-should be displayed as follows::
+Navigate to 13 March and type 'd'
+(:function:`diary-view-entries`). The birthday should be displayed as
+follows::
 
   Sunday, March 13, 2016
   ======================
@@ -326,7 +332,7 @@ There is a complementary function `bbdb-creation-newer-than` to
 identify recently created records.
 
 Similarly, using the 'timestamp' field can identify records modified
-in the last month (`bbdb-timestamp-newer`).
+in the last month (:function:`bbdb-timestamp-newer`).
 
 Another useful function to assist in identifying records that have
 been created and never subsequently updated is

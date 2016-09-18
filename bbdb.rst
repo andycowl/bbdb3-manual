@@ -3,11 +3,6 @@ Lisp library (bbdb)
 
 .. el:require:: bbdb
 
-Keymap
-------
-
-.. el:keymap:: bbdb-mode-map
-
 Functions
 ---------
 
@@ -74,16 +69,10 @@ Functions
 .. el:function:: bbdb-display-records
    :auto:
 
-.. el:function:: bbdb-display-records
-   :auto:
-
 .. el:function:: bbdb-divide-name
    :auto:
 
 .. el:function:: bbdb-editable
-   :auto:
-
-.. el:function:: bbdb-empty-record
    :auto:
 
 .. el:function:: bbdb-empty-record
@@ -131,10 +120,10 @@ Functions
 .. el:function:: bbdb-list-strings
    :auto:
 
-.. el:function:: bbdb-merge-concat-remove-duplicates
+.. el:function:: bbdb-merge-concat
    :auto:
 
-.. el:function:: bbdb-merge-concat
+.. el:function:: bbdb-merge-concat-remove-duplicates
    :auto:
 
 .. el:function:: bbdb-merge-lists
@@ -153,21 +142,6 @@ Functions
    :auto:
 
 .. el:function:: bbdb-mouse-menu
-   :auto:
-
-.. el:function:: bbdb-merge-concat-remove-duplicates
-   :auto:
-
-.. el:function:: bbdb-merge-concat
-   :auto:
-
-.. el:function:: bbdb-merge-string-least
-   :auto:
-
-.. el:function:: bbdb-merge-string-most
-   :auto:
-
-.. el:function:: bbdb-merge-xfield
    :auto:
 
 .. el:function:: bbdb-message-clean-name-default
@@ -224,10 +198,10 @@ Functions
 .. el:function:: bbdb-record-field
    :auto:
 
-.. el:function:: bbdb-record-name-lf
+.. el:function:: bbdb-record-name
    :auto:
 
-.. el:function:: bbdb-record-name
+.. el:function:: bbdb-record-name-lf
    :auto:
 
 .. el:function:: bbdb-record-set-field
@@ -293,10 +267,6 @@ Functions
 Variables
 ---------
 
-.. el:variable:: bbdb-append-display
-   :auto:
-   :noindex:
-
 .. el:variable:: bbdb-accept-message-alist
    :auto:
 
@@ -320,6 +290,10 @@ Variables
 
 .. el:variable:: bbdb-annotate-field
    :auto:
+
+.. el:variable:: bbdb-append-display
+   :auto:
+   :noindex:
 
 .. el:variable:: bbdb-auto-notes-ignore-headers
    :auto:
@@ -466,16 +440,16 @@ Variables
 .. el:variable:: bbdb-lastname-re
    :auto:
 
-.. el:variable:: bbdb-lastname-suffixes
-   :auto:
-
 .. el:variable:: bbdb-lastname-suffix-re
    :auto:
 
-.. el:variable:: bbdb-layout-alist
+.. el:variable:: bbdb-lastname-suffixes
    :auto:
 
 .. el:variable:: bbdb-layout
+   :auto:
+
+.. el:variable:: bbdb-layout-alist
    :auto:
 
 .. el:variable:: bbdb-legal-postcodes
@@ -493,10 +467,10 @@ Variables
 .. el:variable:: bbdb-mail-avoid-redundancy
    :auto:
 
-.. el:variable:: bbdb-mail-name-format
+.. el:variable:: bbdb-mail-name
    :auto:
 
-.. el:variable:: bbdb-mail-name
+.. el:variable:: bbdb-mail-name-format
    :auto:
 
 .. el:variable:: bbdb-mail-user-agent
