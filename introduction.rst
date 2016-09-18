@@ -7,15 +7,14 @@ GNU Emacs version 23 or later.
 
 BBDB offers the following features:
 
-* tight integration with Emacs news and mail readers (Gnus, MH-e,
-  mu4e, notmuch, Rmail, Wanderlust, VM).
+* integration with Emacs news and mail readers (Gnus, MH-e, mu4e,
+  notmuch, Rmail, Wanderlust, VM).
 * automatic creation of entries from mail messages and news articles.
 * extensible database format with standard and user-defined fields.
-* comprehensive management (de-duplication, purge).
 * support for different address and phone formats.
 * integration of events with Emacs calendar and Orgmode.
+* database management (de-duplication, purging historic data).
 
--------
 History
 -------
 
@@ -28,7 +27,6 @@ The last release of BBDB2 was version 2.35 (released on 30 January 2007).
 In May 2010, Roland Winkler announced he was resurrecting the project
 and embarking on a major rewrite.
 
----------------------
 What's new in BBDB3 ?
 ---------------------
 
@@ -52,7 +50,6 @@ incoming messages in your Emacs MUA (Gnus, Rmail, VM, etc).  So you
 can configure BBDB such that it updates BBDB based on outgoing
 messages in much the same way you can do this with incoming messages.
 
---------------------
 Where to get BBDB3 ?
 --------------------
 
@@ -70,7 +67,6 @@ development version.
 
 .. _Melpa: https://melpa.org/#/
 
---------
 Building
 --------
 
@@ -79,27 +75,24 @@ There are a couple of prerequisites for compiling BBDB3 from source:
 * autoconf (2.69 or higher)
 * automake (1.13 or higher)
 
-Most Linux distributions will have the required versions of
-these packages in the standard repositories.
+Most Linux distributions will have the required versions of these
+packages available in the standard repositories.
 
-Quick guide for building BBDB3 from source on Linux::
+Quickstart guide for building BBDB3 from source on Linux::
 
     $ sh ./autogen
     $ ./configure
     $ make
     $ sudo make install
 
--------------
 Configuration
 -------------
 
-To get started and use BBDB, a single line is required in 'init.el'::
+To get started and use BBDB, two lines are required in 'init.el'::
 
-    (require 'bbdb-loaddefs "/path/to/bbdb/lisp/bbdb-loaddefs.el")
+  (add-to-list 'load-path "/path/to/bbdb/lisp)
+  (require 'bbdb-loaddefs)
 
-Localisation - configure your country ?
-
----------
 Upgrading
 ---------
 
@@ -108,5 +101,10 @@ contents to the new format. This conversion is done automatically
 although it may be prudent to take a copy of the existing BBDB
 database.
 
-The default location for the BBDB database is '~/.bbdb' in BBDB2 and
+The default location for the BBDB database was '~/.bbdb' in BBDB2 and
 changed to '~/.emacs.d/bbdb' in BBDB3.
+
+Localisation
+------------
+
+Configure your country, phone and address format.

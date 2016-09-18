@@ -14,16 +14,33 @@ Commands
    :binding: c
    :auto:
 
+.. el:command:: bbdb-delete-field-or-record
+   :auto:
+
 .. el:command:: bbdb-display-records-completely
    :binding: T
    :auto:
 
 .. el:command:: bbdb-do-all-records
-   :auto:
    :binding: *
+   :auto:
+
+.. el:command:: bbdb-insert-field
+   :binding: i
+   :auto:
+
+.. el:command:: bbdb-mail
+   :auto:
+
+.. el:command:: bbdb-merge-records
+   :auto:
 
 .. el:command:: bbdb-omit-record
    :binding: o
+   :auto:
+
+.. el:command:: bbdb-search-duplicates
+   :binding: / d
    :auto:
 
 .. el:command:: bbdb-toggle-records-layout
@@ -81,9 +98,6 @@ Functions
 .. el:function:: bbdb-creation-older
    :auto:
 
-.. el:function:: bbdb-delete-field-or-record
-   :auto:
-
 .. el:function:: bbdb-delete-records
    :auto:
 
@@ -138,9 +152,6 @@ Functions
 .. el:function:: bbdb-ident-point
    :auto:
 
-.. el:function:: bbdb-insert-field
-   :auto:
-
 .. el:function:: bbdb-list-transpose
    :auto:
 
@@ -150,13 +161,7 @@ Functions
 .. el:function:: bbdb-mail-aliases
    :auto:
 
-.. el:function:: bbdb-mail
-   :auto:
-
 .. el:function:: bbdb-mail-yank
-   :auto:
-
-.. el:function:: bbdb-merge-records
    :auto:
 
 .. el:function:: bbdb-message-search
@@ -193,9 +198,6 @@ Functions
    :auto:
 
 .. el:function:: bbdb-search-changed
-   :auto:
-
-.. el:function:: bbdb-search-duplicates
    :auto:
 
 .. el:function:: bbdb-search-invert
