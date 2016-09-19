@@ -35,11 +35,19 @@ File format information
 -----------------------
 
 You don't need to know this but the BBDB file format version is
-embedded within the database file::
+embedded within the file header (first two lines) of the BBDB
+database.
 
-  $ head -2 ~/.emacs.d/bbdb
+For BBDBV2 (2.35)::
+
+  ;; -*-coding: utf-8-emacs;-*-
+  ;;; file-version: 6
+
+For BBDBV3 (3.1.2)::
+
   ;; -*- mode: Emacs-Lisp; coding: utf-8; -*-
   ;;; file-format: 7
+
 
 Incorrect BBDB version
 ----------------------
@@ -64,3 +72,17 @@ then either cite the date of the Melpa package. Alternatively, use::
   $ grep bbdb-version /path/to/bbdb/lisp/bbdb-site.el
   (defconst bbdb-version "3.1.2" "Version of BBDB.")
   (defconst bbdb-version-date "2016-07-21 01:18:24 -0500"
+
+Terminology
+-----------
+
+BBDB3 attempted to rationalise the terminology which meant the
+changing of some lisp variables and functions.
+
+In BBDB3, "address" is used to refer to snail mail addresses, "mail"
+for email addresses and "name" for real names.
+
+BBDB3 treats outgoing messages (i.e. Emacs message and mail mode) like
+incoming messages in your Emacs MUA (Gnus, Rmail, VM, etc).  So you
+can configure BBDB such that it updates BBDB based on outgoing
+messages in much the same way you can do this with incoming messages.
