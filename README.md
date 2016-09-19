@@ -4,10 +4,10 @@ bbdb3-manual
 The repository for the BBDB3 documentation set.
 
 All documents were produced using [Sphinx] together with the
-[SphinxEmacsContrib] extension.
+[sphinxemacs-contrib] extension.
 
 [Sphinx]: http://www.sphinx-doc.org/en/stable/
-[SphinxEmacsContrib]: http://sphinxcontrib-emacs.readthedocs.io/en/latest/
+[sphinxemacs-contrib]: http://sphinxcontrib-emacs.readthedocs.io/en/latest/
 
 Sphinx allows automatic documentation generation from the docstrings
 embedded in the Emacs Lisp source files.
