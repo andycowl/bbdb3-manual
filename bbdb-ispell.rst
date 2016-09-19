@@ -6,10 +6,10 @@ Lisp library (bbdb-ispell)
 Functions
 ---------
 
-.. el:function:: bbdb-ispell-export
+.. el:function:: bbdb-ispell-collect-words
    :auto:
 
-.. el:function:: bbdb-ispell-collect-words
+.. el:function:: bbdb-ispell-export
    :auto:
 
 Variables

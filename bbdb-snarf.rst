@@ -9,13 +9,10 @@ Functions
 .. el:function:: bbdb-snarf
    :auto:
 
+.. el:function:: bbdb-snarf-address-eu
+   :auto:
+
 .. el:function:: bbdb-snarf-address-us
-   :auto:
-
-.. el:function:: bbdb-snarf-address-eu
-   :auto:
-
-.. el:function:: bbdb-snarf-address-eu
    :auto:
 
 .. el:function:: bbdb-snarf-empty-lines

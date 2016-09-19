@@ -9,13 +9,13 @@ Functions
 .. el:function:: bbdb-insinuate-vm
    :auto:
 
+.. el:function:: bbdb/vm-auto-add-label
+   :auto:
+
 .. el:function:: bbdb/vm-auto-folder
    :auto:
 
 .. el:function:: bbdb/vm-virtual-folder
-   :auto:
-
-.. el:function:: bbdb/vm-auto-add-label
    :auto:
 
 .. el:function:: vm-summary-function-B

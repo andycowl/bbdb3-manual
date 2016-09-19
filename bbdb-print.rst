@@ -39,9 +39,6 @@ Variables
 .. el:variable:: bbdb-print-full-alist
    :auto:
 
-.. el:variable:: bbdb-print-omit-fields
-   :auto:
-
 .. el:variable:: bbdb-print-mail
    :auto:
 
@@ -51,11 +48,14 @@ Variables
 .. el:variable:: bbdb-print-name-format
    :auto:
 
+.. el:variable:: bbdb-print-omit-fields
+   :auto:
+
 .. el:variable:: bbdb-print-prolog
    :auto:
 
-.. el:variable:: bbdb-print-tex-quote-alist
+.. el:variable:: bbdb-print-require
    :auto:
 
-.. el:variable:: bbdb-print-require
+.. el:variable:: bbdb-print-tex-quote-alist
    :auto:

@@ -45,29 +45,10 @@ Functions
 .. el:function:: bbdb-mua-annotate-sender
    :auto:
 
-.. el:function:: bbdb-mua-edit-field
-   :auto:
-
-.. el:function:: bbdb-mua-edit-field-interactive
-   :auto:
-
-.. el:function:: bbdb-mua-edit-field-recipients
-   :auto:
-
-.. el:function:: bbdb-mua-edit-field-sender
-   :auto:
-
 .. el:function:: bbdb-mua-auto-update
    :auto:
 
 .. el:function:: bbdb-mua-auto-update-init
-   :auto:
-
-.. el:function:: bbdb-mua-update-interactive-p
-   :auto:
-   :noindex:
-
-.. el:function:: bbdb-mua-window-p
    :auto:
 
 .. el:function:: bbdb-mua-display-all-recipients
@@ -85,6 +66,18 @@ Functions
 .. el:function:: bbdb-mua-display-sender
    :auto:
 
+.. el:function:: bbdb-mua-edit-field
+   :auto:
+
+.. el:function:: bbdb-mua-edit-field-interactive
+   :auto:
+
+.. el:function:: bbdb-mua-edit-field-recipients
+   :auto:
+
+.. el:function:: bbdb-mua-edit-field-sender
+   :auto:
+
 .. el:function:: bbdb-mua-summary-mark
    :auto:
    :noindex:
@@ -92,7 +85,14 @@ Functions
 .. el:function:: bbdb-mua-summary-unify
    :auto:
 
+.. el:function:: bbdb-mua-update-interactive-p
+   :auto:
+   :noindex:
+
 .. el:function:: bbdb-mua-update-records
+   :auto:
+
+.. el:function:: bbdb-mua-window-p
    :auto:
 
 .. el:function:: bbdb-mua-wrapper

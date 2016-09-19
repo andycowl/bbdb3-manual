@@ -36,9 +36,6 @@ Variables
 .. el:variable:: bbdb/gnus-score-default
    :auto:
 
-.. el:variable:: bbdb/gnus-split-default-group
-   :auto:
-
 .. el:variable:: bbdb/gnus-score-default-internal
    :auto:
 
@@ -49,6 +46,9 @@ Variables
    :auto:
 
 .. el:variable:: bbdb/gnus-split-crosspost-default
+   :auto:
+
+.. el:variable:: bbdb/gnus-split-default-group
    :auto:
 
 .. el:variable:: bbdb/gnus-split-myaddr-regexp
