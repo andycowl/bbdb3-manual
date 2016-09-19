@@ -15,6 +15,7 @@ BBDB offers the following features:
 * integration of events with Emacs calendar and Orgmode.
 * database management (de-duplication, purging historic data).
 
+
 History
 -------
 
@@ -27,6 +28,7 @@ The last release of BBDB2 was version 2.35 (released on 30 January 2007).
 In May 2010, Roland Winkler announced he was resurrecting the project
 and embarking on a major rewrite.
 
+
 What's new in BBDB3 ?
 ---------------------
 
@@ -38,17 +40,6 @@ Complete overhaul of the code base.
 Support for modern Emacs mail readers - mu4e, notmuch, wanderlust
 
 Globalisation - improved support for phone and address formats.
-
-BBDB3 attempted to rationalise the terminology which meant the
-changing of some lisp variables and functions.
-
-In BBDB3, "address" is used to refer to snail mail addresses, "mail"
-for email addresses and "name" for real names.
-
-BBDB3 treats outgoing messages (i.e. Emacs message and mail mode) like
-incoming messages in your Emacs MUA (Gnus, Rmail, VM, etc).  So you
-can configure BBDB such that it updates BBDB based on outgoing
-messages in much the same way you can do this with incoming messages.
 
 Where to get BBDB3 ?
 --------------------
@@ -66,6 +57,7 @@ BBDB3 is also available via `Melpa`_. This version tracks the latest
 development version.
 
 .. _Melpa: https://melpa.org/#/
+
 
 Building
 --------
@@ -85,6 +77,7 @@ Quickstart guide for building BBDB3 from source on Linux::
     $ make
     $ sudo make install
 
+
 Configuration
 -------------
 
@@ -92,6 +85,7 @@ To get started and use BBDB, two lines are required in 'init.el'::
 
   (add-to-list 'load-path "/path/to/bbdb/lisp")
   (require 'bbdb-loaddefs)
+
 
 Upgrading
 ---------
@@ -103,6 +97,7 @@ database.
 
 The default location for the BBDB database was '~/.bbdb' in BBDB2 and
 changed to '~/.emacs.d/bbdb' in BBDB3.
+
 
 Localisation
 ------------
