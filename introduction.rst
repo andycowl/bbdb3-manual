@@ -90,7 +90,7 @@ Configuration
 
 To get started and use BBDB, two lines are required in 'init.el'::
 
-  (add-to-list 'load-path "/path/to/bbdb/lisp)
+  (add-to-list 'load-path "/path/to/bbdb/lisp")
   (require 'bbdb-loaddefs)
 
 Upgrading
