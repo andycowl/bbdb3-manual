@@ -11,3 +11,9 @@ Constants
 
 .. el:constant:: bbdb-version-date
    :auto:
+
+Variables
+---------
+
+.. el:variable:: bbdb-print-tex-path
+   :auto:

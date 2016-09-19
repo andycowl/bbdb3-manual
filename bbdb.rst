@@ -3,6 +3,34 @@ Lisp library (bbdb)
 
 .. el:require:: bbdb
 
+Commands
+--------
+
+.. el:command:: bbdb-display-records
+   :binding: / 1
+   :auto:
+
+.. el:command:: bbdb-next-field
+   :binding: <TAB>
+   :auto:
+
+.. el:command:: bbdb-next-record
+   :binding: n
+   :auto:
+
+.. el:command:: bbdb-prev-field
+   :binding: <DEL>
+   :auto:
+
+.. el:command:: bbdb-prev-record
+   :binding: p
+   :auto:
+
+.. el:command:: bbdb-save
+   :binding: s
+   :auto:
+
+
 Functions
 ---------
 
@@ -64,9 +92,6 @@ Functions
    :auto:
 
 .. el:function:: bbdb-display-record
-   :auto:
-
-.. el:function:: bbdb-display-records
    :auto:
 
 .. el:function:: bbdb-divide-name
@@ -156,12 +181,6 @@ Functions
 .. el:function:: bbdb-multiple-buffers-default
    :auto:
 
-.. el:function:: bbdb-next-field
-   :auto:
-
-.. el:function:: bbdb-next-record
-   :auto:
-
 .. el:function:: bbdb-overwrite-record-internal
    :auto:
 
@@ -178,12 +197,6 @@ Functions
    :auto:
 
 .. el:function:: bbdb-pop-up-window-simple
-   :auto:
-
-.. el:function:: bbdb-prev-field
-   :auto:
-
-.. el:function:: bbdb-prev-record
    :auto:
 
 .. el:function:: bbdb-puthash
@@ -232,9 +245,6 @@ Functions
    :auto:
 
 .. el:function:: bbdb-revert-buffer
-   :auto:
-
-.. el:function:: bbdb-save
    :auto:
 
 .. el:function:: bbdb-scan-property

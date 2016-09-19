@@ -10,11 +10,44 @@ Commands
    :binding: b
    :auto:
 
+.. el:command:: bbdb-add-mail-alias
+   :binding: a
+   :auto:
+
+.. el:command:: bbdb-append-display
+   :binding: +
+   :auto:
+
+.. el:command:: bbdb-browse-url
+   :binding: u
+   :auto:
+
+.. el:command:: bbdb-copy-fields-as-kill
+   :binding: C r
+   :auto:
+
+.. el:command:: bbdb-copy-records-as-kill
+   :binding: C r
+   :auto:
+
 .. el:command:: bbdb-create
    :binding: c
    :auto:
 
 .. el:command:: bbdb-delete-field-or-record
+   :binding: C-k or d
+   :auto:
+
+.. el:command:: bbdb-dial
+   :binding: M-d
+   :auto:
+
+.. el:command:: bbdb-display-current-record
+   :binding: C-x n d
+   :auto:
+
+.. el:command:: bbdb-display-all-records
+   :binding: C-x n w
    :auto:
 
 .. el:command:: bbdb-display-records-completely
@@ -25,11 +58,38 @@ Commands
    :binding: *
    :auto:
 
+.. el:command:: bbdb-edit-field
+   :binding: e
+   :auto:
+
+.. el:command:: bbdb-edit-foo
+   :binding: ;
+   :auto:
+
+.. el:command:: bbdb-help
+   :binding: ?
+
+   Display brief help
+
+.. el:command:: bbdb-info
+   :binding: h
+
+   Display BBDB manual
+
 .. el:command:: bbdb-insert-field
    :binding: i
    :auto:
 
 .. el:command:: bbdb-mail
+   :binding: m
+   :auto:
+
+.. el:command:: bbdb-mail-address
+   :binding: M
+   :auto:
+
+.. el:command:: bbdb-mail-aliases
+   :binding: A
    :auto:
 
 .. el:command:: bbdb-merge-records
@@ -39,8 +99,50 @@ Commands
    :binding: o
    :auto:
 
+.. el:command:: bbdb-search-address
+   :binding: / a
+   :auto:
+
+.. el:command:: bbdb-search-changed
+   :binding: / c
+   :auto:
+
 .. el:command:: bbdb-search-duplicates
    :binding: / d
+   :auto:
+
+.. el:command:: bbdb-search-invert
+   :binding: !
+   :auto:
+
+.. el:command:: bbdb-search-mail
+   :binding: / m
+   :auto:
+
+.. el:command:: bbdb-search-name
+   :binding: / n
+   :auto:
+
+.. el:command:: bbdb-search-organization
+   :binding: / o
+   :auto:
+
+.. el:command:: bbdb-search-phone
+   :binding: / p
+   :auto:
+
+.. el:command:: bbdb-search-prog
+   :auto:
+
+.. el:command:: bbdb-search-read
+   :auto:
+
+.. el:command:: bbdb-search-xfields
+   :binding: / x
+   :auto:
+
+.. el:command:: bbdb-transpose-fields
+   :binding: C-x C-t
    :auto:
 
 .. el:command:: bbdb-toggle-records-layout
@@ -50,16 +152,7 @@ Commands
 Functions
 ---------
 
-.. el:function:: bbdb-add-mail-alias
-   :auto:
-
-.. el:function:: bbdb-append-display
-   :auto:
-
 .. el:function:: bbdb-append-display-p
-   :auto:
-
-.. el:function:: bbdb-browse-url
    :auto:
 
 .. el:function:: bbdb-complete-mail
@@ -83,12 +176,6 @@ Functions
 .. el:function:: bbdb-compose-mail
    :auto:
 
-.. el:function:: bbdb-copy-fields-as-kill
-   :auto:
-
-.. el:function:: bbdb-copy-records-as-kill
-   :auto:
-
 .. el:function:: bbdb-creation-newer
    :auto:
 
@@ -107,19 +194,7 @@ Functions
 .. el:function:: bbdb-dial-number
    :auto:
 
-.. el:function:: bbdb-dial
-   :auto:
-
-.. el:function:: bbdb-display-all-records
-   :auto:
-
-.. el:function:: bbdb-display-current-record
-   :auto:
-
 .. el:function:: bbdb-display-records-with-layout
-   :auto:
-
-.. el:function:: bbdb-do-all-records
    :auto:
 
 .. el:function:: bbdb-do-records
@@ -132,9 +207,6 @@ Functions
    :auto:
 
 .. el:function:: bbdb-edit-address-street
-   :auto:
-
-.. el:function:: bbdb-edit-field
    :auto:
 
 .. el:function:: bbdb-fix-records
@@ -153,12 +225,6 @@ Functions
    :auto:
 
 .. el:function:: bbdb-list-transpose
-   :auto:
-
-.. el:function:: bbdb-mail-address
-   :auto:
-
-.. el:function:: bbdb-mail-aliases
    :auto:
 
 .. el:function:: bbdb-mail-yank
@@ -194,39 +260,6 @@ Functions
 .. el:function:: bbdb-record-list
    :auto:
 
-.. el:function:: bbdb-search-address
-   :auto:
-
-.. el:function:: bbdb-search-changed
-   :auto:
-
-.. el:function:: bbdb-search-invert
-   :auto:
-
-.. el:function:: bbdb-search-invert-p
-   :auto:
-
-.. el:function:: bbdb-search-mail
-   :auto:
-
-.. el:function:: bbdb-search-name
-   :auto:
-
-.. el:function:: bbdb-search-organization
-   :auto:
-
-.. el:function:: bbdb-search-phone
-   :auto:
-
-.. el:function:: bbdb-search-prog
-   :auto:
-
-.. el:function:: bbdb-search-read
-   :auto:
-
-.. el:function:: bbdb-search-xfields
-   :auto:
-
 .. el:function:: bbdb-sort-addresses
    :auto:
 
@@ -243,7 +276,4 @@ Functions
    :auto:
 
 .. el:function:: bbdb-touch-records
-   :auto:
-
-.. el:function:: bbdb-transpose-fields
    :auto:
