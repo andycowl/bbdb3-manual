@@ -17,27 +17,9 @@ Contents:
    mail
    orgmode
    utilities
-   elisp
    faq
+   elisp
    thirdparty
-   bbdb
-   bbdb-anniv
-   bbdb-com
-   bbdb-gnus
-   bbdb-ispell
-   bbdb-message
-   bbdb-mhe
-   bbdb-migrate
-   bbdb-mu4e
-   bbdb-mua
-   bbdb-pgp
-   bbdb-print
-   bbdb-rmail
-   bbdb-sc
-   bbdb-site
-   bbdb-snarf
-   bbdb-vm
-   bbdb-wl
 
 Indices and tables
 ==================
