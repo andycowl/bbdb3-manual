@@ -23,7 +23,7 @@ Elisp Documentation
 
 Summary of BBDB commands, functions, variables and hooks.
 
-
+-------------
 Command Index
 -------------
 
@@ -41,6 +41,7 @@ Command Index
 
 .. el:command:: bbdb-browse-url
    :binding: u
+   Visit Web sites listed in the `url' field(s) of the current record.
    :auto:
 
 .. el:command:: bbdb-copy-fields-as-kill
@@ -63,12 +64,16 @@ Command Index
    :binding: M-d
    :auto:
 
+.. el:command:: bbdb-display-all-records
+   :binding: C-x n w
+   :auto:
+
 .. el:command:: bbdb-display-current-record
    :binding: C-x n d
    :auto:
 
-.. el:command:: bbdb-display-all-records
-   :binding: C-x n w
+.. el:command:: bbdb-display-records
+   :binding: / 1
    :auto:
 
 .. el:command:: bbdb-display-records-completely
@@ -89,13 +94,11 @@ Command Index
 
 .. el:command:: bbdb-help
    :binding: ?
-
-   Display brief help
+   Display a one line command summary in the echo area.
 
 .. el:command:: bbdb-info
    :binding: h
-
-   Display BBDB manual
+   Read the Info documentation for BBDB.
 
 .. el:command:: bbdb-insert-field
    :binding: i
@@ -116,8 +119,28 @@ Command Index
 .. el:command:: bbdb-merge-records
    :auto:
 
+.. el:command:: bbdb-next-field
+   :binding: <TAB>
+   :auto:
+
+.. el:command:: bbdb-next-record
+   :binding: n
+   :auto:
+
+.. el:command:: bbdb-prev-field
+   :binding: <DEL>
+   :auto:
+
+.. el:command:: bbdb-prev-record
+   :binding: p
+   :auto:
+
 .. el:command:: bbdb-omit-record
    :binding: o
+   :auto:
+
+.. el:command:: bbdb-save
+   :binding: s
    :auto:
 
 .. el:command:: bbdb-search-address
@@ -162,41 +185,16 @@ Command Index
    :binding: / x
    :auto:
 
-.. el:command:: bbdb-transpose-fields
-   :binding: C-x C-t
-   :auto:
-
 .. el:command:: bbdb-toggle-records-layout
    :binding: t
    :auto:
 
-
-.. el:command:: bbdb-display-records
-   :binding: / 1
-   :auto:
-
-.. el:command:: bbdb-next-field
-   :binding: <TAB>
-   :auto:
-
-.. el:command:: bbdb-next-record
-   :binding: n
-   :auto:
-
-.. el:command:: bbdb-prev-field
-   :binding: <DEL>
-   :auto:
-
-.. el:command:: bbdb-prev-record
-   :binding: p
-   :auto:
-
-.. el:command:: bbdb-save
-   :binding: s
+.. el:command:: bbdb-transpose-fields
+   :binding: C-x C-t
    :auto:
 
 
-
+--------------
 Function Index
 --------------
 
@@ -595,10 +593,10 @@ Function Index
 .. el:function:: bbdb-pgp
    :auto:
 
-.. el:function:: bbdb-prefix-message
+.. el:function:: bbdb-print
    :auto:
 
-.. el:function:: bbdb-print
+.. el:function:: bbdb-prefix-message
    :auto:
 
 .. el:function:: bbdb-print-phone
@@ -829,8 +827,7 @@ Function Index
 .. el:function:: vm-summary-function-B
    :auto:
 
-
-
+--------------
 Variable Index
 --------------
 
@@ -1354,6 +1351,7 @@ Variable Index
    :auto:
 
 
+---------
 Constants
 ---------
 
@@ -1370,6 +1368,7 @@ Constants
    :auto:
 
 
+-----
 Hooks
 -----
 
