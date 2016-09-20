@@ -84,6 +84,15 @@ Can I prevent BBDB constantly asking me to save the bbdb ?::
 
   (add-hook 'bbdb-after-change-hook (lambda (arg) (bbdb-save)))
 
+How to record contacts on outbound emails ?
+-------------------------------------------
+
+[ Ask Roland ]
+
+This thread implies it's possible but I don't know the magic elisp
+snippet
+
+https://www.mail-archive.com/bbdb-info@lists.sourceforge.net/msg06286.html
 
 Terminology
 -----------
