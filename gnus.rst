@@ -80,12 +80,40 @@ There are some scenarios where it is not useful for BBDB to mindlessly
 collect contact information. One example is the Gmane mailing lists
 where the true email addresses of posters are masked::
 
-  (setq bbdb/mail-auto-create-p 'bbdb-ignore-some-messages-hook)
-  (setq bbdb/news-auto-create-p 'bbdb-ignore-some-messages-hook)
-  (setq bbdb-ignore-some-messages-alist
-    `(("From" . "public.gmane.org")
-     ("Newsgroups" . "gmane.*")
-     ))
+  (setq bbdb-ignore-message-alist '((("Newsgroups") . "gmane.*")))
+
+---------------
+Automatic notes
+---------------
+
+BBDB can notice when it sees a contact and annotate the contact record
+with relevant information.
+
+To enable this feature, add the following line to 'init.el'::
+
+  (add-hook 'bbdb-notice-mail-hook 'bbdb-auto-notes)
+
+For example, this snippet maintains a 'lastseen' field which records
+when a contact last corresponded or posted to a newsgroup/mailing
+list. In addition, BBDB records the mail program used in the 'mailer'
+field::
+
+  (setq bbdb-auto-notes-rules
+    (list
+      '("Date" (".*" lastseen identity nil))
+      '("User-Agent" (".*" mailer identity nil))))
+
+There may be scenarios where you do not want BBDB to automatically
+maintain these annotations. This might be on large volume mailing
+lists which are scanned quickly and you wish to remove the (minor)
+performance overhead and needlessly bloating the BBDB.
+
+For example, to disable automatic notes gathering for
+messages on GNU mailing lists::
+
+  (setq bbdb-auto-notes-ignore-headers
+      '((("Organization" . "^Gatewayed from\\|^Source only"))))
+
 
 -------------
 Use full name
