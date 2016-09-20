@@ -58,7 +58,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'BBDBV3'
-copyright = u'2016, Andy Cowling'
+copyright = u'2016, Free Software Foundation, Inc.'
 author = u'Andy Cowling'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -328,8 +328,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'index', u'BBDBV3 Documentation',
-     author, 'BBDBV3', 'One line description of project.',
+    (master_doc, 'index', u'BBDBV3 Manual',
+     author, 'BBDBV3', 'Insidious Big Brother Database (BBDB).',
      'Miscellaneous'),
 ]
 
