@@ -41,6 +41,7 @@ Support for modern Emacs mail readers - mu4e, notmuch, wanderlust
 
 Globalisation - improved support for phone and address formats.
 
+
 Where to get BBDB3 ?
 --------------------
 
@@ -70,8 +71,10 @@ There are a couple of prerequisites for compiling BBDB3 from source:
 Most Linux distributions will have the required versions of these
 packages available in the standard repositories.
 
-Quickstart guide for building BBDB3 from source on Linux::
+A quickstart guide for building the latest version of BBDB3 from
+source on Linux::
 
+    $ git clone git://git.savannah.nongnu.org/bbdb.git
     $ sh ./autogen
     $ ./configure
     $ make
@@ -81,7 +84,7 @@ Quickstart guide for building BBDB3 from source on Linux::
 Configuration
 -------------
 
-To get started and use BBDB, two lines are required in 'init.el'::
+To get started with BBDB, two lines are required in 'init.el'::
 
   (add-to-list 'load-path "/path/to/bbdb/lisp")
   (require 'bbdb-loaddefs)
