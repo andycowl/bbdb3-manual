@@ -104,7 +104,7 @@ valuable in purging historic, outdated data and examining recent
 records.
 
 Use 'TAB' (:command:`bbdb-next-field`) to navigate to the next field
-and 'BACKSPACE' (:command:`bbdb-prev-field`) to go back to the
+and 'DEL' (:command:`bbdb-prev-field`) to go back to the
 previous field.
 
 If you made any errors during the creation of the contact, navigate to
@@ -157,10 +157,10 @@ The full list of field searches is
 Duplicates
 ----------
 
-BBDB offers help in managing a contact database. A common problem is
-that of duplicate entries; a person who has different aliases ('Dave',
-'David') or multiple email addresses (e.g. home, work) or historic,
-outdated fields.
+BBDB includes features to help manage a contact database. A common
+problem is that of duplicate entries; a person who has different
+aliases ('Dave', 'David') or multiple email addresses (e.g. home,
+work) or historic, outdated fields.
 
 Add a new entry for 'Larry Mullen' with an email address of
 'larry.mullen@islandrecords.com'.
@@ -190,7 +190,7 @@ followed by::
 The single, resulting merged record is now displayed. 'Larry Mullen'
 is now is an 'AKA' field for the 'Larry Mullen Jnr' record.
 
-Extended Fields
+Extended fields
 ---------------
 
 BBDB supports extended fields ('xfields') which allow the user to
@@ -208,8 +208,8 @@ prompts::
 In addition to the 'notes' field, you can extend BBDB with additional
 user defined fields.
 
-Use 'i' (:command:`bbdb-insert-field`) to add a new field called 'Instrument'
-and set this field to 'Guitar' for Dave Evans.
+Use 'i' (:command:`bbdb-insert-field`) to add a new field called
+'Instrument' and set this field to 'Guitar' for Dave Evans.
 
 Of course, the U2 guitarist is more commonly known as 'The Edge' so
 navigate to the AKA ('Also Known As') field and add 'The Edge' as an
@@ -224,8 +224,9 @@ Search and navigate to a specfic contact and type 'm'
 (:function:`bbdb-mail`) which composes an email to the current
 contact.
 
-If a set of contacts has been created, type '* m' to send an email to
-all contacts in the list.
+If a set of contacts has been created, type '* m'
+(:function:`bbdb-do-all-records`) to send an email to all contacts in
+the list.
 
 You can use this feature to manage simple mail groups; if you tag a
 group of contacts with 'curry', you can use '* m' to invite your
@@ -346,7 +347,7 @@ Snarfing
 Given a text file with the following contents::
 
   Michael Stipe
-  245 Dan Rather Avenue
+  245 Mulholland Drive
   Atlanta
   GA
   Email: stipey@remhq.com
@@ -360,9 +361,9 @@ results::
 
   Michael Stipe
          mail:  stipey@remhq.com
-         notes: 245 Dan Rather Avenue
-         Atlanta
-         GA
+         notes: 245 Mulholland Drive
+                Atlanta
+                GA
 
 
 Printing
