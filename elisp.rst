@@ -41,8 +41,8 @@ Command Index
 
 .. el:command:: bbdb-browse-url
    :binding: u
-   Visit Web sites listed in the `url' field(s) of the current record.
-   :auto:
+
+   Visit Web sites listed in the 'url' field(s) of the current record.
 
 .. el:command:: bbdb-copy-fields-as-kill
    :binding: C r
@@ -94,10 +94,12 @@ Command Index
 
 .. el:command:: bbdb-help
    :binding: ?
+
    Display a one line command summary in the echo area.
 
 .. el:command:: bbdb-info
    :binding: h
+
    Read the Info documentation for BBDB.
 
 .. el:command:: bbdb-insert-field
