@@ -5,10 +5,11 @@ FAQ
 What version of Emacs do I need ?
 ---------------------------------
 
-Version 23, 24 or 25 of GNU Emacs. XEmacs is longer supported
+Versions 23, 24 and the recently released 25.1 of GNU Emacs are
+supported.
 
-How do you automatically save BBDB on exit ?
---------------------------------------------
+XEmacs is longer supported
+
 
 How to get help with BBDB ?
 ---------------------------
@@ -23,7 +24,7 @@ How to report a problem with BBDB ?
 -----------------------------------
 
 Send a detailed report to the BBDB mailing list including the
-following info:-
+following information:-
 
 * Emacs version
 * BBDB version
@@ -34,9 +35,10 @@ following info:-
 File format information
 -----------------------
 
-You don't need to know this but the BBDB file format version is
-embedded within the file header (first two lines) of the BBDB
-database.
+The BBDB file format version is embedded within the file header (first
+two lines) of the BBDB database file. It's unlikely you will ever need
+to know this but it may prove helpful when diagnosing V2 to V3
+migration issues.
 
 For BBDBV2 (2.35)::
 
@@ -52,26 +54,36 @@ For BBDBV3 (3.1.2)::
 Incorrect BBDB version
 ----------------------
 
-If BBDB is built from source, 'M-x bbdb-version' reports the version::
+If BBDB is built from source, :function:`bbdb-version` reports the version::
 
   BBDB version 3.1.2 (2016-07-21 01:18:24 -0500)
 
-However, if you are using BBDB diownloaded from Melpa, 'M-x
-bbdb-version' reports::
+However, if you are using the version of BBDB downloaded from Melpa,
+'M-x bbdb-version' reports::
 
-  'BBDB version @PACKAGE_VERSION@ (@PACKAGE_DATE@)'
+  BBDB version @PACKAGE_VERSION@ (@PACKAGE_DATE@)
 
-This is a known issue with the packaging process on Melpa.
+This is a known issue_ with the packaging process on Melpa.
 
-If you need to know the correct BBDB version (e.g for a bug report),
+.. _issue: https://github.com/melpa/melpa/issues/1470
+
+If you need to know the correct BBDB version (e.g. for a bug report),
 then either cite the date of the Melpa package. Alternatively, use::
 
   M-x locate-library
-  bbdb-site
+  Enter 'bbdb-site'
   'Library is file /path/to/bbdb/lisp/bbdb-site.elc'
   $ grep bbdb-version /path/to/bbdb/lisp/bbdb-site.el
   (defconst bbdb-version "3.1.2" "Version of BBDB.")
   (defconst bbdb-version-date "2016-07-21 01:18:24 -0500"
+
+Automatic save
+--------------
+
+Can I prevent BBDB constantly asking me to save the bbdb ?::
+
+  (add-hook 'bbdb-after-change-hook (lambda (arg) (bbdb-save)))
+
 
 Terminology
 -----------
