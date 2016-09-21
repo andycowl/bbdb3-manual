@@ -13,9 +13,11 @@ BBDB offers the following features:
 * extensible database format with standard and user-defined fields.
 * support for different address and phone formats.
 * integration of events with Emacs calendar and Orgmode.
+* printing of address book entries using TeX.
 * database management (de-duplication, purging historic data).
+* support for signed and encrypted messages using PGP.
 
-
+-------
 History
 -------
 
@@ -28,20 +30,7 @@ The last release of BBDB2 was version 2.35 (released on 30 January 2007).
 In May 2010, Roland Winkler announced he was resurrecting the project
 and embarking on a major rewrite.
 
-
-What's new in BBDB3 ?
----------------------
-
-[ This section outlines why BBDB2 users may want to upgrade. Need to
-improve and extend this section - Roland ?]
-
-Complete overhaul of the code base.
-
-Support for modern Emacs mail readers - mu4e, notmuch, wanderlust
-
-Globalisation - improved support for phone and address formats.
-
-
+--------------------
 Where to get BBDB3 ?
 --------------------
 
@@ -59,7 +48,7 @@ development version.
 
 .. _Melpa: https://melpa.org/#/
 
-
+--------
 Building
 --------
 
@@ -80,7 +69,7 @@ source on Linux::
     $ make
     $ sudo make install
 
-
+-------------
 Configuration
 -------------
 
@@ -89,7 +78,7 @@ To get started with BBDB, two lines are required in 'init.el'::
   (add-to-list 'load-path "/path/to/bbdb/lisp")
   (require 'bbdb-loaddefs)
 
-
+---------
 Upgrading
 ---------
 
@@ -100,9 +89,3 @@ database.
 
 The default location for the BBDB database was '~/.bbdb' in BBDB2 and
 changed to '~/.emacs.d/bbdb' in BBDB3.
-
-
-Localisation
-------------
-
-Configure your country, phone and address format.
