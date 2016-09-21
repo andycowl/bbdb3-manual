@@ -5,8 +5,7 @@ FAQ
 What version of Emacs do I need ?
 ---------------------------------
 
-Versions 23, 24 and the recently released 25.1 of GNU Emacs are
-supported.
+Versions 23, 24 and 25 of GNU Emacs are supported.
 
 XEmacs is longer supported
 
