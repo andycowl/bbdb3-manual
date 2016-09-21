@@ -74,8 +74,6 @@ To enable fully automatic and insidious mode, use::
 Whitelists and blacklists
 -------------------------
 
-[ Check this and test ]
-
 There are some scenarios where it is not useful for BBDB to mindlessly
 collect contact information. One example is the Gmane mailing lists
 where the true email addresses of posters are masked::
@@ -114,12 +112,9 @@ messages on GNU mailing lists::
   (setq bbdb-auto-notes-ignore-headers
       '((("Organization" . "^Gatewayed from\\|^Source only"))))
 
-
 -------------
 Use full name
 -------------
-
-[ Check this example too ]
 
 Some people (or their IT administrators) have malformed names in their
 email configuration. If you prefer to see names correctly capitalized
