@@ -9,6 +9,7 @@ The best way to demonstrate the features in BBDB is to actually
 illustrate some standard tasks. If you are already an experienced BBDB
 user, you may wish to skip this section.
 
+-----------------
 Creating an entry
 -----------------
 
@@ -28,6 +29,7 @@ Add another entry for 'David Evans' in the same manner.
 Now we have two entries, we can navigate and search our embryonic
 BBDB.
 
+---------
 Searching
 ---------
 
@@ -53,20 +55,21 @@ You can also search BBDB using 'b' (:command:`bbdb`) which searches
 across all fields. For example, searching for 'evans' displays a
 single record ('David Evans'). The search is case insensitive.
 
-
+--------
 Updating
 --------
 
 Occasionally, you may want to change contact details.  Search BBDB
 (using 'b') to find the contact named 'David Evans'.
 
-Type 'e' (:command:`bbdb-edit-field`) to change this contact's first name to
-'Dave'.
+Type 'e' (:command:`bbdb-edit-field`) to change this contact's first
+name to 'Dave'.
 
 Save your changes using 's' (:command:`bbdb-save`). Your changes are
 now saved to the BBDB which resides in '~/.emacs.d/bbdb'
 (:variable:`bbdb-file`) by default.
 
+-------------
 Adding fields
 -------------
 
@@ -111,6 +114,7 @@ If you made any errors during the creation of the contact, navigate to
 the offending field and then use 'e' (:command:`bbdb-edit-field`) to
 edit and correct the field.
 
+-------------------
 Searching on fields
 -------------------
 
@@ -154,6 +158,7 @@ The full list of field searches is
 | '!'         | Invert        |
 +-------------+---------------+
 
+----------
 Duplicates
 ----------
 
@@ -190,6 +195,7 @@ followed by::
 The single, resulting merged record is now displayed. 'Larry Mullen'
 is now is an 'AKA' field for the 'Larry Mullen Jnr' record.
 
+---------------
 Extended fields
 ---------------
 
@@ -215,6 +221,7 @@ Of course, the U2 guitarist is more commonly known as 'The Edge' so
 navigate to the AKA ('Also Known As') field and add 'The Edge' as an
 alias for 'David Evans'.
 
+-------------
 Sending email
 -------------
 
@@ -232,6 +239,7 @@ You can use this feature to manage simple mail groups; if you tag a
 group of contacts with 'curry', you can use '* m' to invite your
 friends for the traditional Thursday night meal.
 
+-----------------
 Omitting an entry
 -----------------
 
@@ -242,6 +250,7 @@ preserving the entry in BBDB.
 You use 'o' (:command:`bbdb-omit-record`) which hides the entry and
 type '* m' to compose an email to the reduced list of contacts.
 
+----------------
 Deleting a field
 ----------------
 
@@ -255,6 +264,7 @@ BBDB will prompt::
 
   delete this 'mail' field (of Michael Stipe)? (y or n).
 
+-----------------
 Deleting an entry
 -----------------
 
@@ -269,6 +279,7 @@ Deletions of multiple records is possible in the normal way; selecting
 the desired data set and use C-k. A prompt will be issued for each
 record.
 
+---------------------------
 Birthdays and anniversaries
 ---------------------------
 
@@ -312,6 +323,7 @@ should be displayed as follows::
   Adam Clayton's 56th birthday
 
 
+------------
 Housekeeping
 ------------
 
@@ -341,6 +353,7 @@ Another useful function to assist in identifying records that have
 been created and never subsequently updated is
 :function:`bbdb-creation-no-change`.
 
+--------
 Snarfing
 --------
 
@@ -348,24 +361,21 @@ Given a text file with the following contents::
 
   Michael Stipe
   245 Mulholland Drive
-  Atlanta
-  GA
+  Atlanta, GA
+  543-8730
   Email: stipey@remhq.com
 
 If you highlight the region, position point at 'Michael Stipe' and
-type ':function:`bbdb-snarf`, BBDB will attempt to parse the region
-and create a BBDB entry for this individual.
-
-Unfortunately, snarfing is complex and doesn't always deliver perfect
-results::
+type ':function:`bbdb-snarf`, BBDB parses the text and create a BBDB
+entry for this individual::
 
   Michael Stipe
-         mail:  stipey@remhq.com
-         notes: 245 Mulholland Drive
-                Atlanta
-                GA
+         phone(work): 543-8730
+       address(work): 245 Mulholland Drive
+                      Atlanta, GA
+                mail: stipey@remhq.com
 
-
+--------
 Printing
 --------
 
@@ -376,6 +386,7 @@ contacts and uses :variable:`bbdb-print-tex-path` (typically
 BBDB then creates a TeX file which must be processed using TeX (not
 LaTeX) to produce a PDF ready for printing.
 
+-------
 Dialing
 -------
 
