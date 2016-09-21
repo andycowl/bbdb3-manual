@@ -59,7 +59,7 @@ master_doc = 'index'
 # General information about the project.
 project = u'BBDBV3'
 copyright = u'2016, Free Software Foundation, Inc.'
-author = u'Andy Cowling'
+author = u'Roland Winkler'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -131,7 +131,7 @@ todo_include_todos = True
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'default'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -271,8 +271,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'BBDBV3.tex', u'BBDBV3 Documentation',
-     u'Andy Cowling', 'manual'),
+    (master_doc, 'bbdb.tex', u'BBDB User Manual',
+     u'Roland Winkler', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -313,7 +313,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'bbdbv3', u'BBDBV3 Documentation',
+    (master_doc, 'bbdb', u'BBDB User Manual',
      [author], 1)
 ]
 
@@ -328,8 +328,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'index', u'BBDBV3 Manual',
-     author, 'BBDBV3', 'Insidious Big Brother Database (BBDB).',
+    (master_doc, 'index', u'BBDBV3 User Manual',
+     author, 'bbdb', 'Insidious Big Brother Database (BBDB).',
      'Miscellaneous'),
 ]
 
