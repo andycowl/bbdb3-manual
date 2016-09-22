@@ -333,7 +333,7 @@ texinfo_elements = {'preamble': """
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'index', u'BBDBV3 User Manual',
-     author, 'bbdb', 'Insidious Big Brother Database (BBDB).',
+     author, 'bbdb', 'Insidious Big Brother Database.',
      'Miscellaneous'),
 ]
 
