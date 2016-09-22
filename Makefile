@@ -148,6 +148,12 @@ latexpdfja:
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf-ja
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
 
+.PHONY: pdf
+pdf:
+	$(SPHINXBUILD) -b pdf $(ALLSPHINXOPTS) _build/pdf
+	@echo "Running LaTeX files through rst2pdf..."
+	@echo "rst2pdffinished. The PDF files are in $(BUILDDIR)/pdf."
+
 .PHONY: text
 text:
 	$(SPHINXBUILD) -b text $(ALLSPHINXOPTS) $(BUILDDIR)/text
