@@ -27,8 +27,10 @@ Contents:
    elisp
    appendices
 
-Index
-=====
+.. only:: html
 
-* :ref:`genindex`
-* :ref:`search`
+   Index
+   =====
+
+   * :ref:`genindex`
+   * :ref:`search`
