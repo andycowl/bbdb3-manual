@@ -14,7 +14,9 @@ Creating an entry
 -----------------
 
 The first task to to add a contact to our BBDB using
-:command:`bbdb-create`. Type::
+:command:`bbdb-create`. Type
+
+.. code-block:: emacs-lisp
 
   M-x bbdb-create
 
@@ -34,9 +36,11 @@ Searching
 ---------
 
 To examine the contents of BBDB, use the :command:`bbdb`
-command::
+command
 
-  M-x bbdb
+.. code-block:: emacs-lisp
+
+   M-x bbdb
 
 Type 'return' to 'Search records using regexp' which displays all
 entries.
@@ -66,7 +70,7 @@ Type 'e' (:command:`bbdb-edit-field`) to change this contact's first
 name to 'Dave'.
 
 Save your changes using 's' (:command:`bbdb-save`). Your changes are
-now saved to the BBDB which resides in '~/.emacs.d/bbdb'
+now saved to the BBDB which resides in ``~/.emacs.d/bbdb``
 (:variable:`bbdb-file`) by default.
 
 -------------
@@ -76,19 +80,19 @@ Adding fields
 Add a new contact called 'Adam Clayton' using
 (:command:`bbdb-create`). This time, include additional information
 for the organization, address, phone number and email address as
-follows::
+follows:
 
-  For 'Organizations' enter, 'Island Records'
-  For email, enter 'adam.clayton@island.com'
-  Street, line 1 - '721 Fifth Avenue'
-  Street, line 2 - 'Midtown Center'
-  Street, line 2 - 'Manhattan'
-  City - 'New York City'
-  State - 'NY'
-  Postcode - 10022
-  Country - 'US'
-  For 'Phone (home), enter '0012127654321'
-  For the 'notes' field, enter 'U2'
+|  For 'Organizations' enter, 'Island Records'
+|  For email, enter 'adam.clayton@island.com'
+|  Street, line 1 - '721 Fifth Avenue'
+|  Street, line 2 - 'Midtown Center'
+|  Street, line 2 - 'Manhattan'
+|  City - 'New York City'
+|  State - 'NY'
+|  Postcode - 10022
+|  Country - 'US'
+|  For 'Phone (home), enter '0012127654321'
+|  For the 'notes' field, enter 'U2'
 
 Now we have a record populated with five fields in addition to
 'Name'. The newly created record is displayed.
@@ -180,15 +184,15 @@ The two similar entries for 'Larry Mullen' should be displayed.
 
 To merge these two entries, use :command:`bbdb-merge-records`. BBDB
 will use the currently displayed record ('Larry Mullen Jnr') as the
-first entry and prompt for the second record::
+first entry and prompt for the second record
 
   merge record "Larry Mullen Jnr" into:
 
-Type 'Larry Mullen' to identify the second record. BBDB will ask::
+Type 'Larry Mullen' to identify the second record. BBDB will ask
 
   Use name "Larry Mullen Jnr" instead of "Larry Mullen"? (y or n)
 
-followed by::
+followed by
 
   Keep "Larry Mullen" as an alternate name? (y or n)
 
@@ -204,10 +208,10 @@ define additional fields for contacts. The predefined 'notes' field in
 BBDB2 is simply an example of an extended field in BBDB3.
 
 You can add a note field to an existing contact using ';'
-(:function:`edit-some-field`).
+(:command:`bbdb-edit-foo`).
 
 As no contacts were initially created with a 'note' field, BBDB
-prompts::
+prompts
 
   "notes" is an unknown field name. Define it? (y or n)
 
@@ -260,7 +264,7 @@ and 'DEL' between fields). Once positioned on the correct field, use
 'd' or 'C-k' (which are both bound to
 :command:`bbdb-delete-field-or-record`).
 
-BBDB will prompt::
+BBDB will prompt
 
   delete this 'mail' field (of Michael Stipe)? (y or n).
 
@@ -271,7 +275,7 @@ Deleting an entry
 Deleting an entry in BBDB is similar. Navigate to the desired entry
 and use 'd' or C-k.
 
-BBDB will prompt::
+BBDB will prompt
 
   Delete the entry of Stephen Morrissey ? (y or n)
 
@@ -285,12 +289,16 @@ Birthdays and anniversaries
 
 To use birthday and anniversaries in BBDB, you must ensure 'anniv is
 included in the list of parameters when calling
-:function:`bbdb-initialize` in 'init.el'::
+:function:`bbdb-initialize` in ``init.el``
+
+.. code-block:: emacs-lisp
 
    (bbdb-initialize 'gnus 'message 'anniv)
 
 To ensure BBDB birthdays and anniversaries are displayed in the Emacs
-calendar, add the following line to 'init.el'::
+calendar, add the following line to ``init.el``
+
+.. code-block:: emacs-lisp
 
   (add-hook 'diary-list-entries-hook 'bbdb-anniv-diary-entries)
 
@@ -300,7 +308,7 @@ Find the contact called 'Adam Clayton' and add a new extended field
 called 'birthday' using 'i' (:command:`bbdb-insert-field`).
 
 The default date format setting is 'American' ('mm/dd/yyyy') so, to
-add Adam Clayton's birthday which is '13 March 1960', enter::
+add Adam Clayton's birthday which is '13 March 1960', enter
 
   '03/13/1960'
 
@@ -311,17 +319,18 @@ The default date format is controlled by the variable
 * 'european' (dd/mm/yyyy)
 * 'iso'      (yyyy/mm/dd)
 
-Check the birthday has been added to the Emacs calendar::
+Check the birthday has been added to the Emacs calendar
+
+.. code-block:: emacs-lisp
 
   M-x calendar
 
-Navigate to 13 March and type 'd'(`diary-view-entries`). The birthday
-should be displayed as follows::
+Navigate to 13 March and type 'd' (`diary-view-entries`). The birthday
+should be displayed as follows:
 
-  Sunday, March 13, 2016
-  ======================
-  Adam Clayton's 56th birthday
-
+|  Sunday, March 13, 2016
+|  ======================
+|  Adam Clayton's 56th birthday
 
 ------------
 Housekeeping
@@ -337,7 +346,7 @@ records:
 * bbdb-timestamp-older
 
 For example, to list all records created before 2014, use
-'M-x bbdb-creation-older-than'. BBDB prompts::
+'M-x bbdb-creation-older-than'. BBDB prompts
 
   'Older than date (yyyy-mm-dd):'
 
@@ -357,23 +366,23 @@ been created and never subsequently updated is
 Snarfing
 --------
 
-Given a text file with the following contents::
+Given a text file with the following contents
 
-  Michael Stipe
-  245 Mulholland Drive
-  Atlanta, GA
-  543-8730
-  Email: stipey@remhq.com
+|  Michael Stipe
+|  245 Mulholland Drive
+|  Atlanta, GA
+|  543-8730
+|  Email: stipey@remhq.com
 
 If you highlight the region, position point at 'Michael Stipe' and
-type ':function:`bbdb-snarf`, BBDB parses the text and create a BBDB
-entry for this individual::
+type ``M-x``':function:`bbdb-snarf`, BBDB parses the text and creates
+a BBDB entry for this individual.
 
-  Michael Stipe
-         phone(work): 543-8730
-       address(work): 245 Mulholland Drive
-                      Atlanta, GA
-                mail: stipey@remhq.com
+|  Michael Stipe
+|         phone(work): 543-8730
+|       address(work): 245 Mulholland Drive
+|                      Atlanta, GA
+|                mail: stipey@remhq.com
 
 --------
 Printing

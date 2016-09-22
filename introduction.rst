@@ -61,22 +61,26 @@ Most Linux distributions will have the required versions of these
 packages available in the standard repositories.
 
 A quickstart guide for building the latest version of BBDB3 from
-source on Linux::
+source on Linux
 
-    $ git clone git://git.savannah.nongnu.org/bbdb.git
-    $ sh ./autogen
-    $ ./configure
-    $ make
-    $ sudo make install
+.. code-block:: sh
+
+   $ git clone git://git.savannah.nongnu.org/bbdb.git
+   $ sh ./autogen
+   $ ./configure
+   $ make
+   $ sudo make install
 
 -------------
 Configuration
 -------------
 
-To get started with BBDB, two lines are required in 'init.el'::
+To get started with BBDB, two lines are required in ``init.el``
 
-  (add-to-list 'load-path "/path/to/bbdb/lisp")
-  (require 'bbdb-loaddefs)
+.. code-block:: emacs-lisp
+
+   (add-to-list 'load-path "/path/to/bbdb/lisp")
+   (require 'bbdb-loaddefs)
 
 ---------
 Upgrading
@@ -87,5 +91,5 @@ contents to the new format. This conversion is done automatically
 although it may be prudent to take a copy of the existing BBDB
 database.
 
-The default location for the BBDB database was '~/.bbdb' in BBDB2 and
-changed to '~/.emacs.d/bbdb' in BBDB3.
+The default location for the BBDB database was ``~/.bbdb`` in BBDB2
+and changed to ``~/.emacs.d/bbdb`` in BBDB3.

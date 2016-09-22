@@ -11,20 +11,22 @@ relatively straightforward.
 
 To use BBDB in conjunction with any of the following mail programs,
 simply add the appropriate program to :function:`bbdb-initialize` in
-'init.el. If you are using message-mode, include 'message as well.
+``init.el``. If you are using message-mode, include 'message as well.
 
-For example::
+For example
+
+.. code-block:: emacs-lisp
 
    (bbdb-initialize 'mu4e 'message)
 
 For other mail programs, substitute 'mu4e as follows:
 
-* mail - Mail (M-x mail)
-* mh-e - MH-E mail reader
-* notmuch - notmuch mail reader
-* rmail - Rmail mail reader
-* vm - ViewMail mail reader
-* wl - Wanderlust mail reader
+* mail - Mail
+* mh-e - MH-E
+* notmuch - notmuch
+* rmail - Rmail
+* vm - ViewMail
+* wl - Wanderlust
 
 ----
 MH-E
@@ -60,4 +62,4 @@ http://www.nongnu.org/viewmail/
 Wanderlust
 ----------
 
-https://www.emacswiki.org/emacs/BBDBV3-Wl
+https://www.emacswiki.org/emacs/WanderLust

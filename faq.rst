@@ -2,23 +2,31 @@
 FAQ
 ===
 
+---------------------------------
 What version of Emacs do I need ?
 ---------------------------------
 
-Versions 23, 24 and 25 of GNU Emacs are supported.
+Any version of GNU Emacs newer than version 23 are supported.
 
 XEmacs is longer supported
 
-
+---------------------------
 How to get help with BBDB ?
 ---------------------------
 
-The best place to get help with BBDB3 is the mailing list::
+The best place to get help with BBDB3 is the mailing list
 
-  There is a mailing list for discussion of BBDB:
-    bbdb-info@lists.sourceforge.net
-  To join, send mail to bbdb-info-request@lists.sourceforge.net
+|    There is a mailing list for discussion of BBDB:
+|
+|        bbdb-info@lists.sourceforge.net
+|
+|    To join, send mail to bbdb-info-request@lists.sourceforge.net
 
+This mailing list is also gatewayed to Gmane_.
+
+.. _Gmane: http://dir.gmane.org/gmane.emacs.bbdb.user
+
+-----------------------------------
 How to report a problem with BBDB ?
 -----------------------------------
 
@@ -31,34 +39,40 @@ following information:-
 * What you expected to happen
 * What happened
 
-File format information
------------------------
+-------------------------------------------------
+What version of BBDB created this database file ?
+-------------------------------------------------
 
 The BBDB file format version is embedded within the file header (first
 two lines) of the BBDB database file. It's unlikely you will ever need
 to know this but it may prove helpful when diagnosing V2 to V3
 migration issues.
 
-For BBDBV2 (2.35)::
+For BBDBV2 (2.35)
 
-  ;; -*-coding: utf-8-emacs;-*-
-  ;;; file-version: 6
+.. code-block:: emacs-lisp
 
-For BBDBV3 (3.1.2)::
+   ;; -*-coding: utf-8-emacs;-*-
+   ;;; file-version: 6
 
-  ;; -*- mode: Emacs-Lisp; coding: utf-8; -*-
-  ;;; file-format: 7
+For BBDBV3 (3.1.2)
 
+.. code-block:: emacs-lisp
 
-Incorrect BBDB version
-----------------------
+   ;; -*- mode: Emacs-Lisp; coding: utf-8; -*-
+   ;;; file-format: 7
 
-If BBDB is built from source, :function:`bbdb-version` reports the version::
+----------------------------------------
+Why does BBDB report a strange version ?
+----------------------------------------
+
+If BBDB is built from source, :function:`bbdb-version` reports the
+version::
 
   BBDB version 3.1.2 (2016-07-21 01:18:24 -0500)
 
 However, if you are using the version of BBDB downloaded from Melpa,
-'M-x bbdb-version' reports::
+``M-x bbdb-version`` reports::
 
   BBDB version @PACKAGE_VERSION@ (@PACKAGE_DATE@)
 
@@ -67,22 +81,31 @@ This is a known issue_ with the packaging process on Melpa.
 .. _issue: https://github.com/melpa/melpa/issues/1470
 
 If you need to know the correct BBDB version (e.g. for a bug report),
-then either cite the date of the Melpa package. Alternatively, use::
+then either cite the date of the Melpa package. Alternatively, use
+
+.. code-block:: emacs-lisp
 
   M-x locate-library
   Enter 'bbdb-site'
   'Library is file /path/to/bbdb/lisp/bbdb-site.elc'
-  $ grep bbdb-version /path/to/bbdb/lisp/bbdb-site.el
+
+.. code-block:: sh
+
+   $ grep bbdb-version /path/to/bbdb/lisp/bbdb-site.el
   (defconst bbdb-version "3.1.2" "Version of BBDB.")
   (defconst bbdb-version-date "2016-07-21 01:18:24 -0500"
 
-Automatic save
---------------
+-------------------------------------
+Can BBDB automatically save changes ?
+-------------------------------------
 
-Can I prevent BBDB constantly asking me to save the bbdb ?::
+Can I prevent BBDB asking me to save the bbdb when quitting emacs ?
+
+.. code-block:: emacs-lisp
 
   (add-hook 'bbdb-after-change-hook (lambda (arg) (bbdb-save)))
 
+-------------------------------------------
 How to record contacts on outbound emails ?
 -------------------------------------------
 
@@ -93,6 +116,7 @@ snippet
 
 https://www.mail-archive.com/bbdb-info@lists.sourceforge.net/msg06286.html
 
+-----------
 Terminology
 -----------
 
